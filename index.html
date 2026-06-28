@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio – RF & Embedded Systems Engineer</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+/*
+=======================================================
+  HOW TO ADD YOUR IMAGES
+  -------------------------------------------------------
+  Each project image has a comment like this:
+  <!-- 📸 IMAGE: project-antenna -->
+  Just replace the <div class="img-placeholder ..."> block
+  with a normal <img> tag, like this example:
+
+  <img src="images/mon-antenne.jpg"
+       alt="Antenna Array 5G"
+       style="width:100%; height:100%; object-fit:cover; border-radius:12px;">
+
+  Put your image files in a folder called "images/"
+  next to this HTML file, then upload both to GitHub.
+=======================================================
+*/
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --ink:      #0D0F14;
+  --ink-2:    #161A24;
+  --ink-3:    #1E2434;
+  --signal:   #E8FF47;
+  --signal-d: #C8E000;
+  --signal-dim: #E8FF4715;
+  --frost:    #F0F4FF;
+  --slate:    #8896B0;
+  --border:   #252D3F;
+  --card:     #131724;
+  --mono:     'DM Mono', monospace;
+  --display:  'Syne', sans-serif;
+  --body:     'Inter', sans-serif;
+  --r:        10px;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  background: var(--ink);
+  color: var(--frost);
+  font-family: var(--body);
+  font-size: 16px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── NAV ─────────────────────────────── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  height: 56px;
+  background: #0D0F14dd;
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+  display: flex; align-items: center;
+  padding: 0 2.5rem;
+  gap: 2.5rem;
+}
+.nav-logo {
+  font-family: var(--display);
+  font-size: 17px; font-weight: 800;
+  color: var(--frost);
+  letter-spacing: -0.5px;
+  margin-right: auto;
+}
+.nav-logo em { color: var(--signal); font-style: normal; }
+nav a {
+  color: var(--slate);
+  text-decoration: none;
+  font-size: 13px; font-weight: 500;
+  letter-spacing: 0.02em;
+  transition: color .2s;
+}
+nav a:hover { color: var(--signal); }
+.nav-cta {
+  background: var(--signal);
+  color: var(--ink) !important;
+  font-weight: 600 !important;
+  padding: 6px 16px;
+  border-radius: 6px;
+  font-size: 13px !important;
+}
+.nav-cta:hover { background: var(--signal-d); opacity: 1; }
+
+/* ── LAYOUT ──────────────────────────── */
+.wrap { max-width: 1020px; margin: 0 auto; padding: 0 2rem; }
+section { padding: 7rem 0; }
+
+/* ── HERO ────────────────────────────── */
+#hero {
+  min-height: 100vh;
+  display: flex; align-items: center;
+  padding-top: 56px;
+  position: relative;
+  overflow: hidden;
+}
+/* animated grid background */
+#hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 48px 48px;
+  opacity: .35;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, black 30%, transparent 100%);
+}
+#hero::after {
+  content: '';
+  position: absolute;
+  top: 15%; left: 55%;
+  width: 480px; height: 480px;
+  background: radial-gradient(circle, #E8FF4710 0%, transparent 65%);
+  pointer-events: none;
+}
+.hero-inner {
+  position: relative; z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 4rem;
+  align-items: center;
+}
+.hero-tag {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--mono);
+  font-size: 11px; font-weight: 500;
+  color: var(--signal);
+  background: var(--signal-dim);
+  border: 1px solid #E8FF4730;
+  border-radius: 100px;
+  padding: 4px 12px;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.08em;
+}
+.hero-tag::before {
+  content: '';
+  width: 5px; height: 5px;
+  background: var(--signal);
+  border-radius: 50%;
+  animation: blink 2.2s ease-in-out infinite;
+}
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:.2} }
+h1 {
+  font-family: var(--display);
+  font-size: clamp(2.6rem, 5vw, 4.2rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -1.5px;
+  color: var(--frost);
+  margin-bottom: 1.25rem;
+}
+h1 .accent { color: var(--signal); }
+.hero-sub {
+  font-size: 16px;
+  color: var(--slate);
+  line-height: 1.75;
+  max-width: 460px;
+  margin-bottom: 2.25rem;
+}
+.hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 14px; font-weight: 600;
+  padding: 11px 22px;
+  border-radius: var(--r);
+  text-decoration: none;
+  transition: all .2s;
+}
+.btn-y { background: var(--signal); color: var(--ink); }
+.btn-y:hover { background: var(--signal-d); transform: translateY(-1px); }
+.btn-g { background: transparent; color: var(--frost); border: 1px solid var(--border); }
+.btn-g:hover { border-color: var(--signal); background: var(--signal-dim); }
+
+/* hero right — metrics card */
+.hero-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.75rem;
+  display: flex; flex-direction: column; gap: 1.25rem;
+}
+.metric {
+  display: flex; align-items: center; gap: 14px;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border);
+}
+.metric:last-child { border-bottom: none; padding-bottom: 0; }
+.metric-icon {
+  width: 40px; height: 40px; flex-shrink: 0;
+  background: var(--signal-dim);
+  border: 1px solid #E8FF4730;
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 19px;
+}
+.metric-val {
+  font-family: var(--display);
+  font-size: 22px; font-weight: 800;
+  color: var(--frost);
+  line-height: 1;
+}
+.metric-val span { color: var(--signal); }
+.metric-lbl { font-size: 12px; color: var(--slate); margin-top: 2px; }
+
+/* ── SECTION HEADER ──────────────────── */
+.sh {
+  display: flex; align-items: center; gap: 14px;
+  margin-bottom: 0.5rem;
+}
+.sh-label {
+  font-family: var(--mono);
+  font-size: 11px; font-weight: 500;
+  color: var(--signal);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.sh-line { flex: 1; height: 1px; background: var(--border); }
+.sec-title {
+  font-family: var(--display);
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 800;
+  letter-spacing: -0.8px;
+  color: var(--frost);
+  margin-bottom: 0.5rem;
+}
+.sec-sub { color: var(--slate); font-size: 15px; margin-bottom: 3rem; max-width: 520px; }
+
+/* ── SKILLS ──────────────────────────── */
+#skills { background: var(--ink-2); }
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+}
+.sk {
+  background: var(--card);
+  padding: 1.5rem;
+  transition: background .2s;
+}
+.sk:hover { background: var(--ink-3); }
+.sk-icon { font-size: 26px; margin-bottom: 0.9rem; }
+.sk-title {
+  font-family: var(--display);
+  font-size: 15px; font-weight: 700;
+  color: var(--frost);
+  margin-bottom: 0.4rem;
+}
+.sk-tools { font-size: 12.5px; color: var(--slate); line-height: 1.65; }
+.sk-tools strong { color: var(--signal); font-weight: 500; font-family: var(--mono); font-size: 11px; }
+
+/* ── PROJECTS ────────────────────────── */
+.projects-list { display: flex; flex-direction: column; gap: 3.5rem; }
+.project {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+.project.reverse { direction: rtl; }
+.project.reverse > * { direction: ltr; }
+
+/* IMAGE PLACEHOLDER */
+.img-placeholder {
+  width: 100%; aspect-ratio: 16/10;
+  border-radius: 14px;
+  border: 1px dashed var(--border);
+  background: var(--card);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 10px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color .2s;
+}
+.img-placeholder:hover { border-color: var(--signal); }
+.img-placeholder::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(135deg, transparent 40%, #E8FF4706 100%);
+}
+.ph-icon { font-size: 32px; opacity: .35; position: relative; }
+.ph-label {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--slate);
+  text-align: center;
+  line-height: 1.5;
+  padding: 0 1.5rem;
+  position: relative;
+}
+.ph-label strong {
+  display: block;
+  color: var(--signal);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.ph-label code {
+  display: block;
+  background: var(--ink-3);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  padding: 4px 10px;
+  font-size: 10px;
+  color: #8896B0;
+  margin-top: 8px;
+  word-break: break-all;
+}
+
+/* project text */
+.proj-cat {
+  font-family: var(--mono);
+  font-size: 11px; font-weight: 500;
+  color: var(--signal);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+}
+.proj-title {
+  font-family: var(--display);
+  font-size: 1.5rem; font-weight: 800;
+  letter-spacing: -0.5px;
+  color: var(--frost);
+  margin-bottom: 0.9rem;
+  line-height: 1.2;
+}
+.proj-desc { font-size: 14.5px; color: var(--slate); line-height: 1.75; margin-bottom: 1.25rem; }
+.proj-tags { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 1.5rem; }
+.ptag {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--slate);
+  background: var(--ink-3);
+  border: 1px solid var(--border);
+  padding: 3px 10px;
+  border-radius: 5px;
+}
+.ptag.hi { color: var(--signal); background: var(--signal-dim); border-color: #E8FF4730; }
+.proj-specs {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+.spec {
+  background: var(--ink-3);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.6rem 0.9rem;
+}
+.spec-k { font-family: var(--mono); font-size: 10px; color: var(--slate); margin-bottom: 1px; letter-spacing: 0.06em; }
+.spec-v { font-size: 13px; font-weight: 500; color: var(--frost); }
+
+/* ── TOOLS ───────────────────────────── */
+#tools { background: var(--ink-2); }
+.tools-cats { display: flex; flex-direction: column; gap: 1.5rem; }
+.tool-cat-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--slate);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 0.6rem;
+}
+.tools-row { display: flex; flex-wrap: wrap; gap: 8px; }
+.tool-pill {
+  display: flex; align-items: center; gap: 8px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 7px 14px;
+  font-size: 13px; font-weight: 500;
+  color: var(--frost);
+  transition: border-color .2s;
+}
+.tool-pill:hover { border-color: var(--signal); }
+.dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+.dy { background: var(--signal); }
+.db { background: #60A5FA; }
+.dm { background: #F59E0B; }
+.dp { background: #A78BFA; }
+
+/* ── CONTACT ─────────────────────────── */
+#contact { padding-bottom: 5rem; }
+.contact-wrap {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 4rem;
+  position: relative; overflow: hidden;
+  text-align: center;
+}
+.contact-wrap::before {
+  content: '';
+  position: absolute; top: -100px; left: 50%; transform: translateX(-50%);
+  width: 500px; height: 400px;
+  background: radial-gradient(circle, #E8FF4710 0%, transparent 60%);
+  pointer-events: none;
+}
+.contact-wrap h2 {
+  font-family: var(--display);
+  font-size: 2.2rem; font-weight: 800;
+  letter-spacing: -1px;
+  margin-bottom: 0.75rem;
+  position: relative;
+}
+.contact-wrap p { color: var(--slate); font-size: 15px; max-width: 440px; margin: 0 auto 2.5rem; position: relative; }
+.contact-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; position: relative; }
+.c-link {
+  display: flex; align-items: center; gap: 9px;
+  background: var(--ink-3);
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  padding: 10px 18px;
+  font-size: 13.5px; font-weight: 500;
+  color: var(--slate);
+  text-decoration: none;
+  transition: all .2s;
+}
+.c-link:hover { color: var(--signal); border-color: var(--signal); background: var(--signal-dim); }
+
+/* ── FOOTER ──────────────────────────── */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 2rem;
+  text-align: center;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--slate);
+}
+footer em { color: var(--signal); font-style: normal; }
+
+/* ── RESPONSIVE ──────────────────────── */
+@media (max-width: 760px) {
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-card { display: none; }
+  .project, .project.reverse { grid-template-columns: 1fr; direction: ltr; }
+  .project.reverse .img-placeholder { order: -1; }
+  .contact-wrap { padding: 2.5rem 1.5rem; }
+  nav { padding: 0 1.25rem; gap: 1.5rem; }
+  .nav-cta { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══ NAV ══════════════════════════════ -->
+<nav>
+  <div class="nav-logo">Eng<em>.</em>Portfolio</div>
+  <a href="#skills">Skills</a>
+  <a href="#projects">Projects</a>
+  <a href="#tools">Tools</a>
+  <a href="#contact" class="nav-cta">Hire me</a>
+</nav>
+
+<!-- ══ HERO ══════════════════════════════ -->
+<section id="hero">
+  <div class="wrap">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-tag">Open to freelance — Upwork</div>
+        <h1>RF & Embedded<br>Systems <span class="accent">Engineer</span></h1>
+        <p class="hero-sub">
+          Ph.D. in Electronics & Telecommunications · INPT Morocco.<br>
+          I design, simulate, and build — from millimeter-wave antennas to embedded prototypes — with precision and clean documentation.
+        </p>
+        <div class="hero-btns">
+          <a href="#projects" class="btn btn-y">View projects ↓</a>
+          <a href="#contact" class="btn btn-g">Get in touch</a>
+        </div>
+      </div>
+
+      <!-- RIGHT CARD -->
+      <div class="hero-card">
+        <div class="metric">
+          <div class="metric-icon">🎓</div>
+          <div>
+            <div class="metric-val">Ph<span>.D.</span></div>
+            <div class="metric-lbl">Electronics & Telecommunications · INPT</div>
+          </div>
+        </div>
+        <div class="metric">
+          <div class="metric-icon">📡</div>
+          <div>
+            <div class="metric-val">3 <span>simulators</span></div>
+            <div class="metric-lbl">CST · HFSS · Keysight ADS</div>
+          </div>
+        </div>
+        <div class="metric">
+          <div class="metric-icon">🖥️</div>
+          <div>
+            <div class="metric-val">3 <span>PCB tools</span></div>
+            <div class="metric-lbl">Altium · OrCAD · ISIS Proteus</div>
+          </div>
+        </div>
+        <div class="metric">
+          <div class="metric-icon">⚙️</div>
+          <div>
+            <div class="metric-val">3 <span>languages</span></div>
+            <div class="metric-lbl">MATLAB · Python · C</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SKILLS ════════════════════════════ -->
+<section id="skills">
+  <div class="wrap">
+    <div class="sh"><span class="sh-label">Expertise</span><span class="sh-line"></span></div>
+    <h2 class="sec-title">What I bring to your project</h2>
+    <p class="sec-sub">End-to-end engineering — simulation, layout, firmware, and prototyping.</p>
+    <div class="skills-grid">
+      <div class="sk">
+        <div class="sk-icon">📡</div>
+        <div class="sk-title">EM Simulation</div>
+        <div class="sk-tools">
+          <strong>Tools</strong>
+          CST Microwave Studio · Ansoft HFSS · Keysight ADS<br>
+          Antenna arrays, RF filters, S-parameters, radiation patterns, signal integrity
+        </div>
+      </div>
+      <div class="sk">
+        <div class="sk-icon">🖥️</div>
+        <div class="sk-title">PCB & Schematic Design</div>
+        <div class="sk-tools">
+          <strong>Tools</strong>
+          Altium Designer · OrCAD · ISIS Proteus<br>
+          Multi-layer layout, impedance control, DRC/ERC, BOM generation
+        </div>
+      </div>
+      <div class="sk">
+        <div class="sk-icon">💻</div>
+        <div class="sk-title">Programming</div>
+        <div class="sk-tools">
+          <strong>Languages</strong>
+          MATLAB · Python · C<br>
+          Signal processing, automation, data analysis, algorithm development
+        </div>
+      </div>
+      <div class="sk">
+        <div class="sk-icon">⚙️</div>
+        <div class="sk-title">Embedded & Robotics</div>
+        <div class="sk-tools">
+          <strong>Platforms</strong>
+          Arduino · Raspberry Pi · Robotics<br>
+          Firmware, IoT, sensor integration, control systems, PID
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PROJECTS ══════════════════════════ -->
+<section id="projects">
+  <div class="wrap">
+    <div class="sh"><span class="sh-label">Portfolio</span><span class="sh-line"></span></div>
+    <h2 class="sec-title">Selected projects</h2>
+    <p class="sec-sub">Real engineering work across simulation, PCB design, and embedded systems.</p>
+
+    <div class="projects-list">
+
+      <!-- PROJECT 1 -->
+      <div class="project">
+        <!-- 📸 IMAGE 1: Remplacez ce bloc par votre image CST/HFSS
+             Exemple : <img src="images/antenne-5g.jpg" alt="Antenne patch 5G" style="width:100%;height:100%;object-fit:cover;border-radius:14px;">
+        -->
+        <div class="img-placeholder">
+          <div class="ph-icon">📡</div>
+          <div class="ph-label">
+            <strong>📸 Ajoutez votre image ici</strong>
+            Capture d'écran CST ou HFSS de votre antenne patch / réseau d'antennes
+            <code>&lt;img src="images/antenne-5g.jpg" ...&gt;</code>
+          </div>
+        </div>
+        <div>
+          <div class="proj-cat">EM Simulation · Antenna</div>
+          <div class="proj-title">Microstrip Patch Antenna Array — 28 GHz (5G)</div>
+          <p class="proj-desc">
+            Designed and simulated a 4×4 microstrip patch antenna array for millimeter-wave 5G applications. Full parametric study with S-parameter sweeps and 3D radiation pattern analysis.
+          </p>
+          <div class="proj-tags">
+            <span class="ptag hi">CST Microwave Studio</span>
+            <span class="ptag">5G / mmWave</span>
+            <span class="ptag">S-parameters</span>
+            <span class="ptag">Patch Antenna</span>
+          </div>
+          <div class="proj-specs">
+            <div class="spec"><div class="spec-k">Frequency</div><div class="spec-v">28 GHz</div></div>
+            <div class="spec"><div class="spec-k">Gain</div><div class="spec-v">18 dBi</div></div>
+            <div class="spec"><div class="spec-k">Return Loss</div><div class="spec-v">&lt; –15 dB</div></div>
+            <div class="spec"><div class="spec-k">Array</div><div class="spec-v">4×4 elements</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROJECT 2 (reverse) -->
+      <div class="project reverse">
+        <!-- 📸 IMAGE 2: Remplacez ce bloc par votre image Altium/PCB
+             Exemple : <img src="images/pcb-rf.jpg" alt="PCB RF 2.4GHz" style="width:100%;height:100%;object-fit:cover;border-radius:14px;">
+        -->
+        <div class="img-placeholder">
+          <div class="ph-icon">🖥️</div>
+          <div class="ph-label">
+            <strong>📸 Ajoutez votre image ici</strong>
+            Capture d'écran Altium — layout PCB ou vue 3D du circuit
+            <code>&lt;img src="images/pcb-rf.jpg" ...&gt;</code>
+          </div>
+        </div>
+        <div>
+          <div class="proj-cat">PCB Design · RF Layout</div>
+          <div class="proj-title">4-Layer RF Transceiver PCB — 2.4 GHz</div>
+          <p class="proj-desc">
+            Designed a compact 4-layer PCB for a 2.4 GHz RF transceiver. Features controlled-impedance transmission lines (50 Ω), separated power/ground planes, and full DRC compliance.
+          </p>
+          <div class="proj-tags">
+            <span class="ptag hi">Altium Designer</span>
+            <span class="ptag">2.4 GHz</span>
+            <span class="ptag">4-Layer</span>
+            <span class="ptag">Impedance Control</span>
+          </div>
+          <div class="proj-specs">
+            <div class="spec"><div class="spec-k">Layers</div><div class="spec-v">4</div></div>
+            <div class="spec"><div class="spec-k">Impedance</div><div class="spec-v">50 Ω</div></div>
+            <div class="spec"><div class="spec-k">Frequency</div><div class="spec-v">2.4 GHz</div></div>
+            <div class="spec"><div class="spec-k">Standard</div><div class="spec-v">IPC-2221</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROJECT 3 -->
+      <div class="project">
+        <!-- 📸 IMAGE 3: Remplacez ce bloc par votre image Arduino / robot
+             Exemple : <img src="images/robot-arduino.jpg" alt="Robot Arduino" style="width:100%;height:100%;object-fit:cover;border-radius:14px;">
+        -->
+        <div class="img-placeholder">
+          <div class="ph-icon">⚙️</div>
+          <div class="ph-label">
+            <strong>📸 Ajoutez votre image ici</strong>
+            Photo du robot ou capture ISIS Proteus du schéma
+            <code>&lt;img src="images/robot-arduino.jpg" ...&gt;</code>
+          </div>
+        </div>
+        <div>
+          <div class="proj-cat">Embedded System · Robotics</div>
+          <div class="proj-title">Autonomous Line-Following Robot</div>
+          <p class="proj-desc">
+            Built a fully autonomous robot using Arduino Mega with IR sensor array and PID control loop. Custom PCB designed in ISIS Proteus, firmware in C, Bluetooth telemetry for real-time monitoring.
+          </p>
+          <div class="proj-tags">
+            <span class="ptag hi">Arduino</span>
+            <span class="ptag">ISIS Proteus</span>
+            <span class="ptag">PID Control</span>
+            <span class="ptag">C Firmware</span>
+          </div>
+          <div class="proj-specs">
+            <div class="spec"><div class="spec-k">Controller</div><div class="spec-v">Arduino Mega</div></div>
+            <div class="spec"><div class="spec-k">Control</div><div class="spec-v">PID loop</div></div>
+            <div class="spec"><div class="spec-k">Sensors</div><div class="spec-v">IR array</div></div>
+            <div class="spec"><div class="spec-k">Wireless</div><div class="spec-v">Bluetooth</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROJECT 4 (reverse) -->
+      <div class="project reverse">
+        <!-- 📸 IMAGE 4: Remplacez ce bloc par votre image MATLAB
+             Exemple : <img src="images/ofdm-matlab.png" alt="OFDM MATLAB" style="width:100%;height:100%;object-fit:cover;border-radius:14px;">
+        -->
+        <div class="img-placeholder">
+          <div class="ph-icon">💻</div>
+          <div class="ph-label">
+            <strong>📸 Ajoutez votre image ici</strong>
+            Courbe BER, constellation ou résultats MATLAB
+            <code>&lt;img src="images/ofdm-matlab.png" ...&gt;</code>
+          </div>
+        </div>
+        <div>
+          <div class="proj-cat">Signal Processing · MATLAB</div>
+          <div class="proj-title">OFDM Signal Analyzer & BER Simulation</div>
+          <p class="proj-desc">
+            Implemented a complete OFDM chain in MATLAB — modulation, channel modeling (AWGN, Rayleigh), equalization, and BER vs SNR analysis. Used for academic research and teaching digital communications.
+          </p>
+          <div class="proj-tags">
+            <span class="ptag hi">MATLAB</span>
+            <span class="ptag">OFDM</span>
+            <span class="ptag">BER Analysis</span>
+            <span class="ptag">Channel Modeling</span>
+          </div>
+          <div class="proj-specs">
+            <div class="spec"><div class="spec-k">Modulation</div><div class="spec-v">OFDM / QAM</div></div>
+            <div class="spec"><div class="spec-k">Channel</div><div class="spec-v">AWGN / Rayleigh</div></div>
+            <div class="spec"><div class="spec-k">Tool</div><div class="spec-v">MATLAB R2023</div></div>
+            <div class="spec"><div class="spec-k">Output</div><div class="spec-v">BER vs SNR</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROJECT 5 -->
+      <div class="project">
+        <!-- 📸 IMAGE 5: Remplacez ce bloc par votre image Raspberry Pi / IoT
+             Exemple : <img src="images/iot-station.jpg" alt="Station IoT" style="width:100%;height:100%;object-fit:cover;border-radius:14px;">
+        -->
+        <div class="img-placeholder">
+          <div class="ph-icon">🍓</div>
+          <div class="ph-label">
+            <strong>📸 Ajoutez votre image ici</strong>
+            Photo du montage Raspberry Pi ou capture du dashboard
+            <code>&lt;img src="images/iot-station.jpg" ...&gt;</code>
+          </div>
+        </div>
+        <div>
+          <div class="proj-cat">IoT · Raspberry Pi</div>
+          <div class="proj-title">Remote Environment Monitoring Station</div>
+          <p class="proj-desc">
+            Designed an IoT monitoring station measuring temperature, humidity, and CO₂ using Raspberry Pi 4 and Python. Data streamed via MQTT protocol and displayed on a local web dashboard.
+          </p>
+          <div class="proj-tags">
+            <span class="ptag hi">Raspberry Pi 4</span>
+            <span class="ptag">Python</span>
+            <span class="ptag">MQTT</span>
+            <span class="ptag">IoT Dashboard</span>
+          </div>
+          <div class="proj-specs">
+            <div class="spec"><div class="spec-k">Platform</div><div class="spec-v">Raspberry Pi 4</div></div>
+            <div class="spec"><div class="spec-k">Protocol</div><div class="spec-v">MQTT</div></div>
+            <div class="spec"><div class="spec-k">Language</div><div class="spec-v">Python 3</div></div>
+            <div class="spec"><div class="spec-k">Sensors</div><div class="spec-v">Temp / RH / CO₂</div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ TOOLS ═════════════════════════════ -->
+<section id="tools">
+  <div class="wrap">
+    <div class="sh"><span class="sh-label">Toolbox</span><span class="sh-line"></span></div>
+    <h2 class="sec-title">Software & platforms</h2>
+    <p class="sec-sub">Industry-standard tools across every stage of the engineering workflow.</p>
+    <div class="tools-cats">
+      <div>
+        <div class="tool-cat-label">EM Simulation</div>
+        <div class="tools-row">
+          <div class="tool-pill"><span class="dot dy"></span>CST Microwave Studio</div>
+          <div class="tool-pill"><span class="dot dy"></span>Ansoft HFSS</div>
+          <div class="tool-pill"><span class="dot dy"></span>Keysight ADS</div>
+        </div>
+      </div>
+      <div>
+        <div class="tool-cat-label">PCB & Schematic</div>
+        <div class="tools-row">
+          <div class="tool-pill"><span class="dot db"></span>Altium Designer</div>
+          <div class="tool-pill"><span class="dot db"></span>OrCAD</div>
+          <div class="tool-pill"><span class="dot db"></span>ISIS Proteus</div>
+        </div>
+      </div>
+      <div>
+        <div class="tool-cat-label">Programming</div>
+        <div class="tools-row">
+          <div class="tool-pill"><span class="dot dm"></span>MATLAB</div>
+          <div class="tool-pill"><span class="dot dm"></span>Python 3</div>
+          <div class="tool-pill"><span class="dot dm"></span>C / C++</div>
+        </div>
+      </div>
+      <div>
+        <div class="tool-cat-label">Embedded & Hardware</div>
+        <div class="tools-row">
+          <div class="tool-pill"><span class="dot dp"></span>Arduino</div>
+          <div class="tool-pill"><span class="dot dp"></span>Raspberry Pi</div>
+          <div class="tool-pill"><span class="dot dp"></span>Linux</div>
+          <div class="tool-pill"><span class="dot dp"></span>Git / GitHub</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONTACT ════════════════════════════ -->
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-wrap">
+      <h2>Let's build something great</h2>
+      <p>Have a project involving RF design, PCB layout, simulation, or embedded systems? I'm available for freelance work on Upwork.</p>
+      <div class="contact-links">
+        <a href="mailto:votre.email@example.com" class="c-link">✉️ votre.email@example.com</a>
+        <a href="https://www.upwork.com/freelancers/~VOTRE_ID" target="_blank" class="c-link">🔗 Upwork Profile</a>
+        <a href="https://www.linkedin.com/in/VOTRE_PROFIL" target="_blank" class="c-link">💼 LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Built with precision — just like the circuits &nbsp;·&nbsp; <em>RF & Embedded Systems Engineer</em> &nbsp;·&nbsp; Ph.D. · INPT Morocco
+</footer>
+
+</body>
+</html>
