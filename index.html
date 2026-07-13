@@ -1,813 +1,4339 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portfolio – RF & Embedded Systems Engineer</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-<style>
-/*
-=======================================================
-  HOW TO ADD YOUR IMAGES
-  -------------------------------------------------------
-  Each project image has a comment like this:
-  <!-- 📸 IMAGE: project-antenna -->
-  Just replace the <div class="img-placeholder ..."> block
-  with a normal <img> tag, like this example:
+  <meta charset="UTF-8">
 
-  <img src="images/mon-antenne.jpg"
-       alt="Antenna Array 5G"
-       style="width:100%; height:100%; object-fit:cover; border-radius:12px;">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
-  Put your image files in a folder called "images/"
-  next to this HTML file, then upload both to GitHub.
-=======================================================
-*/
+  <title>
+    Dr. Hafid Tizyi | Electronics & Telecommunications Engineer
+  </title>
 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  <meta
+    id="meta-description"
+    name="description"
+    content="Professional portfolio of Dr. Hafid Tizyi, Electronics and Telecommunications Engineer specialized in RFID, antenna design, embedded systems, IoT, Python, artificial intelligence, robotics and STEM education."
+  >
 
-:root {
-  --ink:      #0D0F14;
-  --ink-2:    #161A24;
-  --ink-3:    #1E2434;
-  --signal:   #E8FF47;
-  --signal-d: #C8E000;
-  --signal-dim: #E8FF4715;
-  --frost:    #F0F4FF;
-  --slate:    #8896B0;
-  --border:   #252D3F;
-  --card:     #131724;
-  --mono:     'DM Mono', monospace;
-  --display:  'Syne', sans-serif;
-  --body:     'Inter', sans-serif;
-  --r:        10px;
-}
+  <meta
+    name="keywords"
+    content="Hafid Tizyi, Electronics Engineer, Telecommunications Engineer, RFID, Antenna Design, Embedded Systems, IoT, ESP32, Arduino, Raspberry Pi, Python, Artificial Intelligence, Robotics, STEM"
+  >
 
-html { scroll-behavior: smooth; }
-body {
-  background: var(--ink);
-  color: var(--frost);
-  font-family: var(--body);
-  font-size: 16px;
-  line-height: 1.7;
-  -webkit-font-smoothing: antialiased;
-}
+  <meta name="author" content="Dr. Hafid Tizyi">
+  <meta name="theme-color" content="#07111f">
 
-/* ── NAV ─────────────────────────────── */
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
-  height: 56px;
-  background: #0D0F14dd;
-  backdrop-filter: blur(14px);
-  border-bottom: 1px solid var(--border);
-  display: flex; align-items: center;
-  padding: 0 2.5rem;
-  gap: 2.5rem;
-}
-.nav-logo {
-  font-family: var(--display);
-  font-size: 17px; font-weight: 800;
-  color: var(--frost);
-  letter-spacing: -0.5px;
-  margin-right: auto;
-}
-.nav-logo em { color: var(--signal); font-style: normal; }
-nav a {
-  color: var(--slate);
-  text-decoration: none;
-  font-size: 13px; font-weight: 500;
-  letter-spacing: 0.02em;
-  transition: color .2s;
-}
-nav a:hover { color: var(--signal); }
-.nav-cta {
-  background: var(--signal);
-  color: var(--ink) !important;
-  font-weight: 600 !important;
-  padding: 6px 16px;
-  border-radius: 6px;
-  font-size: 13px !important;
-}
-.nav-cta:hover { background: var(--signal-d); opacity: 1; }
+  <style>
+    :root {
+      --background: #07111f;
+      --background-light: #0b1728;
+      --background-lighter: #102138;
+      --card: rgba(17, 34, 56, 0.78);
+      --card-solid: #102138;
+      --text: #f4f8ff;
+      --muted: #a8b7ca;
+      --border: rgba(255, 255, 255, 0.1);
+      --primary: #2dd4bf;
+      --secondary: #60a5fa;
+      --purple: #a78bfa;
+      --shadow: 0 25px 70px rgba(0, 0, 0, 0.3);
+      --radius: 24px;
+      --container: 1180px;
+    }
 
-/* ── LAYOUT ──────────────────────────── */
-.wrap { max-width: 1020px; margin: 0 auto; padding: 0 2rem; }
-section { padding: 7rem 0; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-/* ── HERO ────────────────────────────── */
-#hero {
-  min-height: 100vh;
-  display: flex; align-items: center;
-  padding-top: 56px;
-  position: relative;
-  overflow: hidden;
-}
-/* animated grid background */
-#hero::before {
-  content: '';
-  position: absolute; inset: 0;
-  background-image:
-    linear-gradient(var(--border) 1px, transparent 1px),
-    linear-gradient(90deg, var(--border) 1px, transparent 1px);
-  background-size: 48px 48px;
-  opacity: .35;
-  mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, black 30%, transparent 100%);
-}
-#hero::after {
-  content: '';
-  position: absolute;
-  top: 15%; left: 55%;
-  width: 480px; height: 480px;
-  background: radial-gradient(circle, #E8FF4710 0%, transparent 65%);
-  pointer-events: none;
-}
-.hero-inner {
-  position: relative; z-index: 1;
-  display: grid;
-  grid-template-columns: 1fr 420px;
-  gap: 4rem;
-  align-items: center;
-}
-.hero-tag {
-  display: inline-flex; align-items: center; gap: 8px;
-  font-family: var(--mono);
-  font-size: 11px; font-weight: 500;
-  color: var(--signal);
-  background: var(--signal-dim);
-  border: 1px solid #E8FF4730;
-  border-radius: 100px;
-  padding: 4px 12px;
-  margin-bottom: 1.5rem;
-  letter-spacing: 0.08em;
-}
-.hero-tag::before {
-  content: '';
-  width: 5px; height: 5px;
-  background: var(--signal);
-  border-radius: 50%;
-  animation: blink 2.2s ease-in-out infinite;
-}
-@keyframes blink { 0%,100%{opacity:1} 50%{opacity:.2} }
-h1 {
-  font-family: var(--display);
-  font-size: clamp(2.6rem, 5vw, 4.2rem);
-  font-weight: 800;
-  line-height: 1.05;
-  letter-spacing: -1.5px;
-  color: var(--frost);
-  margin-bottom: 1.25rem;
-}
-h1 .accent { color: var(--signal); }
-.hero-sub {
-  font-size: 16px;
-  color: var(--slate);
-  line-height: 1.75;
-  max-width: 460px;
-  margin-bottom: 2.25rem;
-}
-.hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
-.btn {
-  display: inline-flex; align-items: center; gap: 8px;
-  font-size: 14px; font-weight: 600;
-  padding: 11px 22px;
-  border-radius: var(--r);
-  text-decoration: none;
-  transition: all .2s;
-}
-.btn-y { background: var(--signal); color: var(--ink); }
-.btn-y:hover { background: var(--signal-d); transform: translateY(-1px); }
-.btn-g { background: transparent; color: var(--frost); border: 1px solid var(--border); }
-.btn-g:hover { border-color: var(--signal); background: var(--signal-dim); }
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 92px;
+    }
 
-/* hero right — metrics card */
-.hero-card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 1.75rem;
-  display: flex; flex-direction: column; gap: 1.25rem;
-}
-.metric {
-  display: flex; align-items: center; gap: 14px;
-  padding-bottom: 1.25rem;
-  border-bottom: 1px solid var(--border);
-}
-.metric:last-child { border-bottom: none; padding-bottom: 0; }
-.metric-icon {
-  width: 40px; height: 40px; flex-shrink: 0;
-  background: var(--signal-dim);
-  border: 1px solid #E8FF4730;
-  border-radius: 8px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 19px;
-}
-.metric-val {
-  font-family: var(--display);
-  font-size: 22px; font-weight: 800;
-  color: var(--frost);
-  line-height: 1;
-}
-.metric-val span { color: var(--signal); }
-.metric-lbl { font-size: 12px; color: var(--slate); margin-top: 2px; }
+    body {
+      min-height: 100vh;
+      color: var(--text);
 
-/* ── SECTION HEADER ──────────────────── */
-.sh {
-  display: flex; align-items: center; gap: 14px;
-  margin-bottom: 0.5rem;
-}
-.sh-label {
-  font-family: var(--mono);
-  font-size: 11px; font-weight: 500;
-  color: var(--signal);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-.sh-line { flex: 1; height: 1px; background: var(--border); }
-.sec-title {
-  font-family: var(--display);
-  font-size: clamp(1.6rem, 3vw, 2.2rem);
-  font-weight: 800;
-  letter-spacing: -0.8px;
-  color: var(--frost);
-  margin-bottom: 0.5rem;
-}
-.sec-sub { color: var(--slate); font-size: 15px; margin-bottom: 3rem; max-width: 520px; }
+      background:
+        radial-gradient(
+          circle at 10% 0%,
+          rgba(45, 212, 191, 0.13),
+          transparent 30%
+        ),
+        radial-gradient(
+          circle at 90% 8%,
+          rgba(96, 165, 250, 0.15),
+          transparent 30%
+        ),
+        linear-gradient(
+          180deg,
+          #07111f 0%,
+          #091525 55%,
+          #07111f 100%
+        );
 
-/* ── SKILLS ──────────────────────────── */
-#skills { background: var(--ink-2); }
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1px;
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  overflow: hidden;
-}
-.sk {
-  background: var(--card);
-  padding: 1.5rem;
-  transition: background .2s;
-}
-.sk:hover { background: var(--ink-3); }
-.sk-icon { font-size: 26px; margin-bottom: 0.9rem; }
-.sk-title {
-  font-family: var(--display);
-  font-size: 15px; font-weight: 700;
-  color: var(--frost);
-  margin-bottom: 0.4rem;
-}
-.sk-tools { font-size: 12.5px; color: var(--slate); line-height: 1.65; }
-.sk-tools strong { color: var(--signal); font-weight: 500; font-family: var(--mono); font-size: 11px; }
+      font-family:
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
 
-/* ── PROJECTS ────────────────────────── */
-.projects-list { display: flex; flex-direction: column; gap: 3.5rem; }
-.project {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2.5rem;
-  align-items: center;
-}
-.project.reverse { direction: rtl; }
-.project.reverse > * { direction: ltr; }
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
 
-/* IMAGE PLACEHOLDER */
-.img-placeholder {
-  width: 100%; aspect-ratio: 16/10;
-  border-radius: 14px;
-  border: 1px dashed var(--border);
-  background: var(--card);
-  display: flex; flex-direction: column;
-  align-items: center; justify-content: center;
-  gap: 10px;
-  position: relative;
-  overflow: hidden;
-  transition: border-color .2s;
-}
-.img-placeholder:hover { border-color: var(--signal); }
-.img-placeholder::before {
-  content: '';
-  position: absolute; inset: 0;
-  background:
-    linear-gradient(135deg, transparent 40%, #E8FF4706 100%);
-}
-.ph-icon { font-size: 32px; opacity: .35; position: relative; }
-.ph-label {
-  font-family: var(--mono);
-  font-size: 11px;
-  color: var(--slate);
-  text-align: center;
-  line-height: 1.5;
-  padding: 0 1.5rem;
-  position: relative;
-}
-.ph-label strong {
-  display: block;
-  color: var(--signal);
-  font-size: 10px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  margin-bottom: 4px;
-}
-.ph-label code {
-  display: block;
-  background: var(--ink-3);
-  border: 1px solid var(--border);
-  border-radius: 5px;
-  padding: 4px 10px;
-  font-size: 10px;
-  color: #8896B0;
-  margin-top: 8px;
-  word-break: break-all;
-}
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
 
-/* project text */
-.proj-cat {
-  font-family: var(--mono);
-  font-size: 11px; font-weight: 500;
-  color: var(--signal);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  margin-bottom: 0.6rem;
-}
-.proj-title {
-  font-family: var(--display);
-  font-size: 1.5rem; font-weight: 800;
-  letter-spacing: -0.5px;
-  color: var(--frost);
-  margin-bottom: 0.9rem;
-  line-height: 1.2;
-}
-.proj-desc { font-size: 14.5px; color: var(--slate); line-height: 1.75; margin-bottom: 1.25rem; }
-.proj-tags { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 1.5rem; }
-.ptag {
-  font-family: var(--mono);
-  font-size: 11px;
-  color: var(--slate);
-  background: var(--ink-3);
-  border: 1px solid var(--border);
-  padding: 3px 10px;
-  border-radius: 5px;
-}
-.ptag.hi { color: var(--signal); background: var(--signal-dim); border-color: #E8FF4730; }
-.proj-specs {
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 8px;
-}
-.spec {
-  background: var(--ink-3);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 0.6rem 0.9rem;
-}
-.spec-k { font-family: var(--mono); font-size: 10px; color: var(--slate); margin-bottom: 1px; letter-spacing: 0.06em; }
-.spec-v { font-size: 13px; font-weight: 500; color: var(--frost); }
+      background-image:
+        linear-gradient(
+          rgba(255, 255, 255, 0.022) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          90deg,
+          rgba(255, 255, 255, 0.022) 1px,
+          transparent 1px
+        );
 
-/* ── TOOLS ───────────────────────────── */
-#tools { background: var(--ink-2); }
-.tools-cats { display: flex; flex-direction: column; gap: 1.5rem; }
-.tool-cat-label {
-  font-family: var(--mono);
-  font-size: 10px;
-  color: var(--slate);
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  margin-bottom: 0.6rem;
-}
-.tools-row { display: flex; flex-wrap: wrap; gap: 8px; }
-.tool-pill {
-  display: flex; align-items: center; gap: 8px;
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 7px 14px;
-  font-size: 13px; font-weight: 500;
-  color: var(--frost);
-  transition: border-color .2s;
-}
-.tool-pill:hover { border-color: var(--signal); }
-.dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
-.dy { background: var(--signal); }
-.db { background: #60A5FA; }
-.dm { background: #F59E0B; }
-.dp { background: #A78BFA; }
+      background-size: 50px 50px;
+      mask-image: linear-gradient(
+        to bottom,
+        black,
+        transparent 85%
+      );
+    }
 
-/* ── CONTACT ─────────────────────────── */
-#contact { padding-bottom: 5rem; }
-.contact-wrap {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  padding: 4rem;
-  position: relative; overflow: hidden;
-  text-align: center;
-}
-.contact-wrap::before {
-  content: '';
-  position: absolute; top: -100px; left: 50%; transform: translateX(-50%);
-  width: 500px; height: 400px;
-  background: radial-gradient(circle, #E8FF4710 0%, transparent 60%);
-  pointer-events: none;
-}
-.contact-wrap h2 {
-  font-family: var(--display);
-  font-size: 2.2rem; font-weight: 800;
-  letter-spacing: -1px;
-  margin-bottom: 0.75rem;
-  position: relative;
-}
-.contact-wrap p { color: var(--slate); font-size: 15px; max-width: 440px; margin: 0 auto 2.5rem; position: relative; }
-.contact-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; position: relative; }
-.c-link {
-  display: flex; align-items: center; gap: 9px;
-  background: var(--ink-3);
-  border: 1px solid var(--border);
-  border-radius: 9px;
-  padding: 10px 18px;
-  font-size: 13.5px; font-weight: 500;
-  color: var(--slate);
-  text-decoration: none;
-  transition: all .2s;
-}
-.c-link:hover { color: var(--signal); border-color: var(--signal); background: var(--signal-dim); }
+    img {
+      display: block;
+      max-width: 100%;
+    }
 
-/* ── FOOTER ──────────────────────────── */
-footer {
-  border-top: 1px solid var(--border);
-  padding: 2rem;
-  text-align: center;
-  font-family: var(--mono);
-  font-size: 12px;
-  color: var(--slate);
-}
-footer em { color: var(--signal); font-style: normal; }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-/* ── RESPONSIVE ──────────────────────── */
-@media (max-width: 760px) {
-  .hero-inner { grid-template-columns: 1fr; }
-  .hero-card { display: none; }
-  .project, .project.reverse { grid-template-columns: 1fr; direction: ltr; }
-  .project.reverse .img-placeholder { order: -1; }
-  .contact-wrap { padding: 2.5rem 1.5rem; }
-  nav { padding: 0 1.25rem; gap: 1.5rem; }
-  .nav-cta { display: none; }
-}
-</style>
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    button {
+      font-family: inherit;
+    }
+
+    .container {
+      width: min(
+        calc(100% - 40px),
+        var(--container)
+      );
+
+      margin-inline: auto;
+    }
+
+    .skip-link {
+      position: fixed;
+      top: -80px;
+      left: 20px;
+      z-index: 2000;
+      padding: 12px 18px;
+      color: #06101c;
+      background: var(--primary);
+      border-radius: 10px;
+      font-weight: 800;
+    }
+
+    .skip-link:focus {
+      top: 20px;
+    }
+
+    /* Navigation */
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid transparent;
+      background: rgba(7, 17, 31, 0.72);
+      backdrop-filter: blur(18px);
+      transition: 0.25s ease;
+    }
+
+    .site-header.scrolled {
+      border-color: var(--border);
+      background: rgba(7, 17, 31, 0.95);
+    }
+
+    .navbar {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+      font-weight: 850;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-logo {
+      width: 43px;
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      border-radius: 13px;
+      color: #06101c;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--primary),
+          var(--secondary)
+        );
+
+      box-shadow:
+        0 8px 30px
+        rgba(45, 212, 191, 0.22);
+
+      font-size: 0.9rem;
+      font-weight: 950;
+    }
+
+    .brand-name span {
+      color: var(--primary);
+    }
+
+    .navigation-area {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 21px;
+      list-style: none;
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: 650;
+    }
+
+    .nav-links a {
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .nav-contact {
+      padding: 10px 17px;
+      color: #06101c !important;
+      background: var(--primary);
+      border-radius: 999px;
+      font-weight: 850;
+    }
+
+    .language-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 4px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.035);
+    }
+
+    .language-button {
+      min-width: 39px;
+      padding: 7px 10px;
+      border: 0;
+      border-radius: 999px;
+      color: var(--muted);
+      background: transparent;
+      cursor: pointer;
+      font-size: 0.75rem;
+      font-weight: 850;
+      transition: 0.2s ease;
+    }
+
+    .language-button:hover {
+      color: var(--text);
+    }
+
+    .language-button.active {
+      color: #06101c;
+      background: var(--primary);
+    }
+
+    .menu-button {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      color: var(--text);
+      background: var(--card);
+      cursor: pointer;
+      font-size: 1.25rem;
+    }
+
+    /* Hero */
+
+    .hero {
+      position: relative;
+      min-height: calc(100vh - 76px);
+      display: grid;
+      align-items: center;
+      padding: 85px 0 75px;
+    }
+
+    .hero-grid {
+      display: grid;
+
+      grid-template-columns:
+        minmax(0, 1.2fr)
+        minmax(330px, 0.8fr);
+
+      align-items: center;
+      gap: 70px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 22px;
+      padding: 8px 13px;
+
+      border:
+        1px solid
+        rgba(45, 212, 191, 0.25);
+
+      border-radius: 999px;
+      color: #baf6ed;
+      background: rgba(45, 212, 191, 0.07);
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--primary);
+
+      box-shadow:
+        0 0 0 5px
+        rgba(45, 212, 191, 0.12);
+    }
+
+    h1 {
+      font-size:
+        clamp(
+          3.2rem,
+          7.2vw,
+          6.6rem
+        );
+
+      line-height: 0.96;
+      letter-spacing: -0.065em;
+    }
+
+    h1 span {
+      display: block;
+      color: transparent;
+
+      background:
+        linear-gradient(
+          100deg,
+          var(--primary),
+          #8de8ff,
+          var(--secondary)
+        );
+
+      background-clip: text;
+      -webkit-background-clip: text;
+    }
+
+    .hero-role {
+      margin-top: 26px;
+      color: #d9e6f7;
+
+      font-size:
+        clamp(
+          1.05rem,
+          2vw,
+          1.35rem
+        );
+
+      font-weight: 730;
+    }
+
+    .hero-description {
+      max-width: 740px;
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 1.06rem;
+    }
+
+    .hero-actions,
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+      margin-top: 31px;
+    }
+
+    .button {
+      min-height: 50px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 12px 20px;
+      border: 1px solid transparent;
+      border-radius: 14px;
+      font-weight: 850;
+
+      transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        background 0.2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-3px);
+    }
+
+    .button-primary {
+      color: #06101c;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--primary),
+          #7dd3fc
+        );
+
+      box-shadow:
+        0 14px 38px
+        rgba(45, 212, 191, 0.18);
+    }
+
+    .button-secondary {
+      border-color: var(--border);
+      background: rgba(255, 255, 255, 0.035);
+    }
+
+    .button-secondary:hover {
+      border-color:
+        rgba(45, 212, 191, 0.4);
+
+      background:
+        rgba(45, 212, 191, 0.07);
+    }
+
+    .specializations {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 26px;
+    }
+
+    .specializations span {
+      padding: 7px 11px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      color: #c6d4e6;
+      background: rgba(255, 255, 255, 0.025);
+      font-size: 0.77rem;
+      font-weight: 650;
+    }
+
+    /* Photo card */
+
+    .hero-card {
+      position: relative;
+      padding: 25px;
+      border: 1px solid var(--border);
+      border-radius: 30px;
+
+      background:
+        radial-gradient(
+          circle at 20% 10%,
+          rgba(45, 212, 191, 0.14),
+          transparent 35%
+        ),
+        linear-gradient(
+          145deg,
+          rgba(20, 42, 69, 0.92),
+          rgba(10, 24, 42, 0.86)
+        );
+
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .profile-visual {
+      position: relative;
+      min-height: 390px;
+      display: grid;
+      place-items: center;
+      padding: 22px;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      background: rgba(4, 12, 23, 0.42);
+      overflow: hidden;
+    }
+
+    .profile-visual::before,
+    .profile-visual::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+
+      border:
+        1px solid
+        rgba(45, 212, 191, 0.25);
+
+      animation:
+        rotate 17s linear infinite;
+    }
+
+    .profile-visual::before {
+      width: 340px;
+      height: 340px;
+    }
+
+    .profile-visual::after {
+      width: 285px;
+      height: 285px;
+      border-color:
+        rgba(96, 165, 250, 0.25);
+
+      animation-direction: reverse;
+      animation-duration: 11s;
+    }
+
+    .profile-photo-container {
+      position: relative;
+      z-index: 2;
+      width: min(100%, 285px);
+      aspect-ratio: 4 / 5;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 30px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #baf6ed,
+          var(--primary),
+          var(--secondary)
+        );
+
+      box-shadow:
+        0 18px 55px
+        rgba(45, 212, 191, 0.26);
+
+      overflow: hidden;
+    }
+
+    .profile-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    .profile-fallback {
+      width: 100%;
+      height: 100%;
+      display: none;
+      place-items: center;
+      color: #06101c;
+      font-size: 4rem;
+      font-weight: 950;
+      letter-spacing: -0.08em;
+    }
+
+    @keyframes rotate {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .profile-information {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .profile-information article {
+      padding: 14px;
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      background: rgba(4, 12, 23, 0.4);
+    }
+
+    .profile-information strong {
+      display: block;
+      font-size: 0.9rem;
+    }
+
+    .profile-information span {
+      color: var(--muted);
+      font-size: 0.75rem;
+    }
+
+    /* General sections */
+
+    section {
+      padding: 105px 0;
+    }
+
+    .section-label {
+      margin-bottom: 12px;
+      color: var(--primary);
+      font-size: 0.78rem;
+      font-weight: 900;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .section-title {
+      max-width: 820px;
+
+      font-size:
+        clamp(
+          2.1rem,
+          4.5vw,
+          4.2rem
+        );
+
+      line-height: 1.04;
+      letter-spacing: -0.045em;
+    }
+
+    .section-description {
+      max-width: 770px;
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 1.03rem;
+    }
+
+    /* About */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 25px;
+      margin-top: 46px;
+    }
+
+    .about-card,
+    .quote-card {
+      padding: 33px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--card);
+
+      box-shadow:
+        0 16px 50px
+        rgba(0, 0, 0, 0.14);
+    }
+
+    .about-card p {
+      color: var(--muted);
+    }
+
+    .about-card p + p {
+      margin-top: 17px;
+    }
+
+    .about-card strong {
+      color: var(--text);
+    }
+
+    .quote-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+    }
+
+    .quote-card::before {
+      content: "“";
+      position: absolute;
+      top: -40px;
+      right: 20px;
+      color: rgba(45, 212, 191, 0.13);
+      font-family: Georgia, serif;
+      font-size: 13rem;
+      line-height: 1;
+    }
+
+    .quote-card blockquote {
+      position: relative;
+
+      font-size:
+        clamp(
+          1.35rem,
+          2.5vw,
+          2rem
+        );
+
+      line-height: 1.36;
+      font-weight: 760;
+      letter-spacing: -0.025em;
+    }
+
+    .quote-card footer {
+      margin-top: 28px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    /* Expertise */
+
+    .expertise-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 46px;
+    }
+
+    .expertise-card {
+      min-height: 260px;
+      padding: 27px;
+      border: 1px solid var(--border);
+      border-radius: 21px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(18, 37, 61, 0.8),
+          rgba(9, 22, 39, 0.8)
+        );
+
+      transition:
+        transform 0.25s ease,
+        border-color 0.25s ease;
+    }
+
+    .expertise-card:hover {
+      transform: translateY(-7px);
+
+      border-color:
+        rgba(45, 212, 191, 0.3);
+    }
+
+    .expertise-number {
+      color: rgba(255, 255, 255, 0.13);
+      font-size: 3rem;
+      font-weight: 950;
+      line-height: 1;
+    }
+
+    .expertise-card h3 {
+      margin-top: 18px;
+      font-size: 1.16rem;
+    }
+
+    .expertise-card p {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 18px;
+    }
+
+    .tag {
+      padding: 5px 9px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: #cbd8e9;
+      background: rgba(255, 255, 255, 0.035);
+      font-size: 0.71rem;
+      font-weight: 680;
+    }
+
+    /* Projects */
+
+    .projects-section {
+      background:
+        linear-gradient(
+          180deg,
+          transparent,
+          rgba(13, 29, 49, 0.72) 14%,
+          rgba(13, 29, 49, 0.72) 86%,
+          transparent
+        );
+    }
+
+    .projects-list {
+      display: grid;
+      gap: 28px;
+      margin-top: 50px;
+    }
+
+    .project {
+      display: grid;
+
+      grid-template-columns:
+        minmax(300px, 0.88fr)
+        minmax(0, 1.12fr);
+
+      min-height: 390px;
+      border: 1px solid var(--border);
+      border-radius: 26px;
+      background: rgba(10, 24, 42, 0.76);
+
+      box-shadow:
+        0 20px 70px
+        rgba(0, 0, 0, 0.18);
+
+      overflow: hidden;
+    }
+
+    .project:nth-child(even) {
+      grid-template-columns:
+        minmax(0, 1.12fr)
+        minmax(300px, 0.88fr);
+    }
+
+    .project:nth-child(even) .project-image {
+      order: 2;
+    }
+
+    .project-image {
+      position: relative;
+      min-height: 330px;
+
+      background:
+        radial-gradient(
+          circle at 20% 20%,
+          rgba(45, 212, 191, 0.18),
+          transparent 34%
+        ),
+        radial-gradient(
+          circle at 80% 80%,
+          rgba(96, 165, 250, 0.18),
+          transparent 34%
+        ),
+        #0c1b2f;
+
+      overflow: hidden;
+    }
+
+    .project-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+
+      transition:
+        transform 0.6s ease;
+    }
+
+    .project:hover .project-image img {
+      transform: scale(1.04);
+    }
+
+    .project-image::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+
+      background:
+        linear-gradient(
+          to top,
+          rgba(4, 12, 23, 0.55),
+          transparent 55%
+        );
+
+      pointer-events: none;
+    }
+
+    .project-image.no-image::before {
+      content: attr(data-placeholder);
+      position: absolute;
+      inset: 24px;
+      display: grid;
+      place-items: center;
+      padding: 20px;
+
+      border:
+        1px dashed
+        rgba(255, 255, 255, 0.2);
+
+      border-radius: 18px;
+      color: rgba(255, 255, 255, 0.65);
+      text-align: center;
+      font-size: 0.82rem;
+    }
+
+    .project-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(28px, 5vw, 54px);
+    }
+
+    .project-category {
+      color: var(--primary);
+      font-size: 0.75rem;
+      font-weight: 900;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .project-content h3 {
+      margin-top: 10px;
+
+      font-size:
+        clamp(
+          1.65rem,
+          3vw,
+          2.65rem
+        );
+
+      line-height: 1.13;
+      letter-spacing: -0.035em;
+    }
+
+    .project-content > p {
+      margin-top: 16px;
+      color: var(--muted);
+    }
+
+    .project-data {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 13px;
+      margin-top: 24px;
+    }
+
+    .project-data div {
+      padding: 13px 14px;
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      background: rgba(255, 255, 255, 0.025);
+    }
+
+    .project-data dt {
+      color: #8da2ba;
+      font-size: 0.68rem;
+      font-weight: 850;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .project-data dd {
+      margin-top: 4px;
+      color: #e2ecf8;
+      font-size: 0.83rem;
+      font-weight: 650;
+    }
+
+    /* Technologies */
+
+    .technology-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 11px;
+      margin-top: 42px;
+    }
+
+    .technology-list span {
+      padding: 11px 15px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      color: #dbe7f5;
+      background: rgba(255, 255, 255, 0.03);
+      font-size: 0.86rem;
+      font-weight: 740;
+      transition: 0.2s ease;
+    }
+
+    .technology-list span:hover {
+      transform: translateY(-3px);
+
+      border-color:
+        rgba(45, 212, 191, 0.4);
+
+      color: var(--primary);
+    }
+
+    /* Research */
+
+    .research-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+      margin-top: 45px;
+    }
+
+    .research-card {
+      padding: 30px;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      background: var(--card);
+    }
+
+    .research-card h3 {
+      font-size: 1.25rem;
+    }
+
+    .research-card > p {
+      margin-top: 11px;
+      color: var(--muted);
+    }
+
+    .research-list {
+      margin-top: 20px;
+      list-style: none;
+    }
+
+    .research-list li {
+      position: relative;
+      padding: 13px 0 13px 25px;
+      border-bottom: 1px solid var(--border);
+      color: #dce7f4;
+    }
+
+    .research-list li:last-child {
+      border-bottom: 0;
+    }
+
+    .research-list li::before {
+      content: "";
+      position: absolute;
+      top: 22px;
+      left: 0;
+      width: 9px;
+      height: 9px;
+      border-radius: 3px;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--primary),
+          var(--secondary)
+        );
+    }
+
+    .timeline {
+      position: relative;
+      display: grid;
+      gap: 18px;
+      margin-top: 45px;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      top: 10px;
+      bottom: 10px;
+      left: 18px;
+      width: 1px;
+
+      background:
+        linear-gradient(
+          var(--primary),
+          rgba(96, 165, 250, 0.2)
+        );
+    }
+
+    .timeline-item {
+      position: relative;
+      padding: 24px 26px 24px 58px;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: rgba(14, 29, 49, 0.68);
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      top: 30px;
+      left: 11px;
+      width: 15px;
+      height: 15px;
+      border: 4px solid var(--background-light);
+      border-radius: 50%;
+      background: var(--primary);
+    }
+
+    .timeline-item h3 {
+      font-size: 1.08rem;
+    }
+
+    .timeline-item p {
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    /* Gallery */
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin-top: 44px;
+    }
+
+    .gallery-item {
+      position: relative;
+      aspect-ratio: 4 / 3;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: var(--card-solid);
+      overflow: hidden;
+      cursor: zoom-in;
+    }
+
+    .gallery-item:nth-child(5n + 1) {
+      grid-column: span 2;
+      aspect-ratio: 2 / 1;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+
+      transition:
+        transform 0.45s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.045);
+    }
+
+    .gallery-item figcaption {
+      position: absolute;
+      bottom: 14px;
+      left: 14px;
+      z-index: 2;
+      padding: 6px 9px;
+
+      border:
+        1px solid
+        rgba(255, 255, 255, 0.15);
+
+      border-radius: 8px;
+      color: white;
+      background: rgba(4, 12, 23, 0.7);
+      backdrop-filter: blur(8px);
+      font-size: 0.71rem;
+      font-weight: 760;
+    }
+
+    .gallery-item::after {
+      content: "";
+      position: absolute;
+      inset: 45% 0 0;
+
+      background:
+        linear-gradient(
+          transparent,
+          rgba(4, 12, 23, 0.66)
+        );
+
+      pointer-events: none;
+    }
+
+    .gallery-message {
+      display: none;
+      grid-column: 1 / -1;
+      padding: 30px;
+      border: 1px dashed var(--border);
+      border-radius: 18px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .gallery-grid.empty .gallery-message {
+      display: block;
+    }
+
+    /* Contact */
+
+    .contact-box {
+      padding:
+        clamp(
+          34px,
+          7vw,
+          76px
+        );
+
+      border:
+        1px solid
+        rgba(45, 212, 191, 0.22);
+
+      border-radius: 30px;
+
+      background:
+        radial-gradient(
+          circle at 10% 10%,
+          rgba(45, 212, 191, 0.14),
+          transparent 28%
+        ),
+        radial-gradient(
+          circle at 90% 90%,
+          rgba(96, 165, 250, 0.16),
+          transparent 28%
+        ),
+        linear-gradient(
+          145deg,
+          rgba(17, 37, 61, 0.96),
+          rgba(8, 20, 36, 0.96)
+        );
+
+      box-shadow: var(--shadow);
+    }
+
+    .contact-box h2 {
+      max-width: 900px;
+
+      font-size:
+        clamp(
+          2.2rem,
+          5.4vw,
+          5rem
+        );
+
+      line-height: 1.02;
+      letter-spacing: -0.055em;
+    }
+
+    .contact-box > p {
+      max-width: 740px;
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 1.04rem;
+    }
+
+    .contact-note {
+      margin-top: 18px;
+      color: #8293aa;
+      font-size: 0.78rem;
+    }
+
+    /* Footer */
+
+    .site-footer {
+      padding: 32px 0 42px;
+      color: #8293aa;
+      font-size: 0.82rem;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding-top: 25px;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-content strong {
+      color: #cbd8e7;
+    }
+
+    /* Image modal */
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      display: none;
+      place-items: center;
+      padding: 24px;
+      background: rgba(2, 8, 16, 0.9);
+      backdrop-filter: blur(12px);
+    }
+
+    .modal.open {
+      display: grid;
+    }
+
+    .modal-content {
+      position: relative;
+      width: min(100%, 1080px);
+      max-height: 90vh;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      background: #081321;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .modal-content img {
+      width: 100%;
+      max-height: 84vh;
+      object-fit: contain;
+      background: #050c16;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      z-index: 3;
+      width: 42px;
+      height: 42px;
+
+      border:
+        1px solid
+        rgba(255, 255, 255, 0.18);
+
+      border-radius: 50%;
+      color: white;
+      background: rgba(4, 12, 23, 0.78);
+      cursor: pointer;
+      font-size: 1.3rem;
+    }
+
+    /* Animation */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(25px);
+
+      transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    :focus-visible {
+      outline:
+        3px solid
+        rgba(45, 212, 191, 0.6);
+
+      outline-offset: 4px;
+    }
+
+    /* Responsive */
+
+    @media (max-width: 1080px) {
+      .nav-links {
+        gap: 14px;
+        font-size: 0.84rem;
+      }
+    }
+
+    @media (max-width: 980px) {
+      .hero {
+        min-height: auto;
+      }
+
+      .hero-grid,
+      .about-grid,
+      .research-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-card {
+        max-width: 650px;
+      }
+
+      .expertise-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .project,
+      .project:nth-child(even) {
+        grid-template-columns: 1fr;
+      }
+
+      .project:nth-child(even) .project-image {
+        order: 0;
+      }
+    }
+
+    @media (max-width: 850px) {
+      .menu-button {
+        display: grid;
+        place-items: center;
+      }
+
+      .navigation-area {
+        gap: 10px;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 67px;
+        right: 20px;
+        left: 20px;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 4px;
+        padding: 13px;
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        background: rgba(7, 17, 31, 0.98);
+        box-shadow: var(--shadow);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        display: block;
+        padding: 11px 12px;
+        border-radius: 10px;
+      }
+
+      .nav-contact {
+        text-align: center;
+      }
+
+      .hero {
+        padding-top: 58px;
+      }
+
+      section {
+        padding: 78px 0;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-item:nth-child(5n + 1) {
+        grid-column: auto;
+        aspect-ratio: 4 / 3;
+      }
+
+      .project-data {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-content {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 540px) {
+      .container {
+        width:
+          min(
+            calc(100% - 26px),
+            var(--container)
+          );
+      }
+
+      .brand-name {
+        display: none;
+      }
+
+      h1 {
+        font-size:
+          clamp(
+            2.75rem,
+            15vw,
+            4.5rem
+          );
+      }
+
+      .hero-actions .button,
+      .contact-actions .button {
+        width: 100%;
+      }
+
+      .profile-information,
+      .expertise-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-card,
+      .quote-card,
+      .research-card {
+        padding: 24px;
+      }
+
+      .project-content {
+        padding: 25px;
+      }
+
+      .profile-visual {
+        min-height: 340px;
+      }
+
+      .profile-photo-container {
+        width: 235px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<!-- ══ NAV ══════════════════════════════ -->
-<nav>
-  <div class="nav-logo">Eng<em>.</em>Portfolio</div>
-  <a href="#skills">Skills</a>
-  <a href="#projects">Projects</a>
-  <a href="#tools">Tools</a>
-  <a href="#contact" class="nav-cta">Hire me</a>
-</nav>
+  <a
+    href="#main-content"
+    class="skip-link"
+    data-i18n="skip_content"
+  >
+    Skip to content
+  </a>
 
-<!-- ══ HERO ══════════════════════════════ -->
-<section id="hero">
-  <div class="wrap">
-    <div class="hero-inner">
-      <div>
-        <div class="hero-tag">Open to freelance — Upwork</div>
-        <h1>RF & Embedded<br>Systems <span class="accent">Engineer</span></h1>
-        <p class="hero-sub">
-          Ph.D. in Electronics & Telecommunications · INPT Morocco.<br>
-          I design, simulate, and build — from millimeter-wave antennas to embedded prototypes — with precision and clean documentation.
+  <!-- Navigation -->
+
+  <header
+    class="site-header"
+    id="site-header"
+  >
+    <div class="container navbar">
+
+      <a
+        href="#home"
+        class="brand"
+        aria-label="Home"
+      >
+        <span class="brand-logo">
+          HT
+        </span>
+
+        <span class="brand-name">
+          Hafid <span>Tizyi</span>
+        </span>
+      </a>
+
+      <div class="navigation-area">
+
+        <nav aria-label="Main navigation">
+          <ul
+            class="nav-links"
+            id="nav-links"
+          >
+            <li>
+              <a
+                href="#about"
+                data-i18n="nav_about"
+              >
+                About
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="#expertise"
+                data-i18n="nav_expertise"
+              >
+                Expertise
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="#projects"
+                data-i18n="nav_projects"
+              >
+                Projects
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="#research"
+                data-i18n="nav_research"
+              >
+                Research
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="#gallery"
+                data-i18n="nav_gallery"
+              >
+                Gallery
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="#contact"
+                class="nav-contact"
+                data-i18n="nav_contact"
+              >
+                Contact
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <div
+          class="language-switcher"
+          aria-label="Language selection"
+        >
+          <button
+            class="language-button active"
+            type="button"
+            data-language="en"
+            aria-pressed="true"
+          >
+            EN
+          </button>
+
+          <button
+            class="language-button"
+            type="button"
+            data-language="fr"
+            aria-pressed="false"
+          >
+            FR
+          </button>
+        </div>
+
+        <button
+          class="menu-button"
+          id="menu-button"
+          aria-label="Open navigation"
+          aria-expanded="false"
+        >
+          ☰
+        </button>
+
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- Hero -->
+
+    <section
+      class="hero"
+      id="home"
+    >
+      <div class="container hero-grid">
+
+        <div class="reveal">
+
+          <span
+            class="eyebrow"
+            data-i18n="hero_eyebrow"
+          >
+            Engineering · Research · Education
+          </span>
+
+          <h1>
+            Dr. Hafid
+            <span>Tizyi</span>
+          </h1>
+
+          <p
+            class="hero-role"
+            data-i18n="hero_role"
+          >
+            Electronics & Telecommunications Engineer · RFID & Antenna
+            Specialist · Embedded Systems, IoT & Robotics Educator
+          </p>
+
+          <p
+            class="hero-description"
+            data-i18n="hero_description"
+          >
+            I combine scientific research, engineering practice and technical
+            education to develop practical solutions in antenna design, RFID,
+            embedded systems, IoT, Python, artificial intelligence and robotics.
+          </p>
+
+          <div class="hero-actions">
+
+            <a
+              href="#projects"
+              class="button button-primary"
+            >
+              <span data-i18n="view_projects">
+                Explore my projects
+              </span>
+
+              <span aria-hidden="true">
+                ↘
+              </span>
+            </a>
+
+            <a
+              id="cv-download-link"
+                href="CV/Hafid_TIZYI_CV_EN.pdf"
+                class="button button-secondary"
+                target="_blank"
+                rel="noopener"
+                aria-label="Download the English CV"
+              >
+                <span data-i18n="download_cv">
+                  Download CV
+                </span>
+
+                <span aria-hidden="true">
+                  ↓
+                </span>
+            </a>
+
+          </div>
+
+          <div class="specializations">
+            <span data-i18n="specialization_1">
+              RF & Antenna Design
+            </span>
+
+            <span data-i18n="specialization_2">
+              RFID Systems
+            </span>
+
+            <span data-i18n="specialization_3">
+              Embedded Systems & IoT
+            </span>
+
+            <span data-i18n="specialization_4">
+              Python & AI
+            </span>
+
+            <span data-i18n="specialization_5">
+              Robotics & STEM Training
+            </span>
+          </div>
+
+        </div>
+
+        <aside
+          class="hero-card reveal"
+          aria-label="Professional profile"
+        >
+
+          <div class="profile-visual">
+
+            <div class="profile-photo-container">
+
+              <img
+                id="profile-photo"
+                class="profile-photo"
+                alt="Dr. Hafid Tizyi"
+              >
+
+              <div
+                id="profile-fallback"
+                class="profile-fallback"
+              >
+                HT
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="profile-information">
+
+            <article>
+              <strong data-i18n="profile_degree">
+                PhD
+              </strong>
+
+              <span data-i18n="profile_degree_text">
+                Electronics & Telecommunications
+              </span>
+            </article>
+
+            <article>
+              <strong data-i18n="profile_engineering">
+                Engineering
+              </strong>
+
+              <span data-i18n="profile_engineering_text">
+                RF, Embedded Systems & IoT
+              </span>
+            </article>
+
+            <article>
+              <strong data-i18n="profile_research">
+                Research
+              </strong>
+
+              <span data-i18n="profile_research_text">
+                RFID, Antennas & AI Localization
+              </span>
+            </article>
+
+            <article>
+              <strong data-i18n="profile_education">
+                Education
+              </strong>
+
+              <span data-i18n="profile_education_text">
+                Robotics, Coding & STEM
+              </span>
+            </article>
+
+          </div>
+
+        </aside>
+
+      </div>
+    </section>
+
+    <!-- About -->
+
+    <section id="about">
+      <div class="container">
+
+        <p
+          class="section-label reveal"
+          data-i18n="about_label"
+        >
+          Professional profile
         </p>
-        <div class="hero-btns">
-          <a href="#projects" class="btn btn-y">View projects ↓</a>
-          <a href="#contact" class="btn btn-g">Get in touch</a>
-        </div>
-      </div>
 
-      <!-- RIGHT CARD -->
-      <div class="hero-card">
-        <div class="metric">
-          <div class="metric-icon">🎓</div>
-          <div>
-            <div class="metric-val">Ph<span>.D.</span></div>
-            <div class="metric-lbl">Electronics & Telecommunications · INPT</div>
-          </div>
-        </div>
-        <div class="metric">
-          <div class="metric-icon">📡</div>
-          <div>
-            <div class="metric-val">3 <span>simulators</span></div>
-            <div class="metric-lbl">CST · HFSS · Keysight ADS</div>
-          </div>
-        </div>
-        <div class="metric">
-          <div class="metric-icon">🖥️</div>
-          <div>
-            <div class="metric-val">3 <span>PCB tools</span></div>
-            <div class="metric-lbl">Altium · OrCAD · ISIS Proteus</div>
-          </div>
-        </div>
-        <div class="metric">
-          <div class="metric-icon">⚙️</div>
-          <div>
-            <div class="metric-val">3 <span>languages</span></div>
-            <div class="metric-lbl">MATLAB · Python · C</div>
-          </div>
+        <h2
+          class="section-title reveal"
+          data-i18n="about_title"
+        >
+          Technology becomes valuable when it solves a real need.
+        </h2>
+
+        <p
+          class="section-description reveal"
+          data-i18n="about_intro"
+        >
+          My work bridges advanced research and hands-on implementation,
+          with a strong focus on clear communication, reliable results
+          and knowledge transfer.
+        </p>
+
+        <div class="about-grid">
+
+          <article class="about-card reveal">
+
+            <p data-i18n="about_p1">
+              I am an Electronics and Telecommunications Engineer with a PhD
+              in Electronics and Telecommunications. My academic work focuses
+              on RFID systems, antenna design, microwave structures and
+              intelligent indoor localization.
+            </p>
+
+            <p data-i18n="about_p2">
+              My technical practice also covers Python programming, Arduino,
+              ESP32, Raspberry Pi, embedded development, IoT, artificial
+              intelligence, computer vision, mobile applications, 3D design
+              and 3D printing.
+            </p>
+
+            <p data-i18n-html="about_p3">
+              Alongside engineering and research, I teach robotics and
+              computer science and founded <strong>Azul Academy</strong>,
+              a learning environment dedicated to robotics, programming,
+              STEM and innovation through practical projects.
+            </p>
+
+          </article>
+
+          <article class="quote-card reveal">
+
+            <blockquote data-i18n="about_quote">
+              I bring together research depth, engineering discipline and
+              educational clarity to transform complex technical ideas into
+              practical, understandable solutions.
+            </blockquote>
+
+            <footer data-i18n="about_footer">
+              Dr. Hafid Tizyi · Morocco
+            </footer>
+
+          </article>
+
         </div>
       </div>
+    </section>
+
+    <!-- Expertise -->
+
+    <section id="expertise">
+      <div class="container">
+
+        <p
+          class="section-label reveal"
+          data-i18n="expertise_label"
+        >
+          Core expertise
+        </p>
+
+        <h2
+          class="section-title reveal"
+          data-i18n="expertise_title"
+        >
+          A multidisciplinary profile built for research and real-world projects.
+        </h2>
+
+        <p
+          class="section-description reveal"
+          data-i18n="expertise_intro"
+        >
+          Services and capabilities suitable for engineering teams,
+          research institutions, educational organizations and
+          international projects.
+        </p>
+
+        <div class="expertise-grid">
+
+          <article class="expertise-card reveal">
+            <span class="expertise-number">
+              01
+            </span>
+
+            <h3 data-i18n="expertise_1_title">
+              RF, Antenna & Microwave Design
+            </h3>
+
+            <p data-i18n="expertise_1_text">
+              Design, simulation, optimization and experimental validation
+              of antennas and microwave structures.
+            </p>
+
+            <div class="tags">
+              <span class="tag">CST</span>
+              <span class="tag">HFSS</span>
+              <span class="tag">ADS</span>
+              <span class="tag">VNA</span>
+              <span class="tag">PCB Prototyping</span>
+            </div>
+          </article>
+
+          <article class="expertise-card reveal">
+            <span class="expertise-number">
+              02
+            </span>
+
+            <h3 data-i18n="expertise_2_title">
+              RFID Systems
+            </h3>
+
+            <p data-i18n="expertise_2_text">
+              Reader antennas, UWB-RFID structures, dual-band systems,
+              diplexers and intelligent indoor localization.
+            </p>
+
+            <div class="tags">
+              <span class="tag">RFID</span>
+              <span class="tag">UWB</span>
+              <span class="tag">Beamforming</span>
+              <span class="tag">Localization</span>
+            </div>
+          </article>
+
+          <article class="expertise-card reveal">
+            <span class="expertise-number">
+              03
+            </span>
+
+            <h3 data-i18n="expertise_3_title">
+              Embedded Systems & IoT
+            </h3>
+
+            <p data-i18n="expertise_3_text">
+              Connected prototypes, sensor integration, embedded programming
+              and smart monitoring applications.
+            </p>
+
+            <div class="tags">
+              <span class="tag">ESP32</span>
+              <span class="tag">Arduino</span>
+              <span class="tag">Raspberry Pi</span>
+              <span class="tag">MQTT</span>
+            </div>
+          </article>
+
+          <article class="expertise-card reveal">
+            <span class="expertise-number">
+              04
+            </span>
+
+            <h3 data-i18n="expertise_4_title">
+              Python, AI & Computer Vision
+            </h3>
+
+            <p data-i18n="expertise_4_text">
+              Machine learning workflows, data processing, intelligent
+              classification and educational AI applications.
+            </p>
+
+            <div class="tags">
+              <span class="tag">Python</span>
+              <span class="tag">TensorFlow</span>
+              <span class="tag">Scikit-learn</span>
+              <span class="tag">Computer Vision</span>
+            </div>
+          </article>
+
+          <article class="expertise-card reveal">
+            <span class="expertise-number">
+              05
+            </span>
+
+            <h3 data-i18n="expertise_5_title">
+              Robotics & Digital Fabrication
+            </h3>
+
+            <p data-i18n="expertise_5_text">
+              Educational robotics, mobile applications, rapid prototyping,
+              3D design and 3D printing.
+            </p>
+
+            <div class="tags">
+              <span class="tag">LEGO EV3</span>
+              <span class="tag">MIT App Inventor</span>
+              <span class="tag">3D Design</span>
+              <span class="tag">3D Printing</span>
+            </div>
+          </article>
+
+          <article class="expertise-card reveal">
+            <span class="expertise-number">
+              06
+            </span>
+
+            <h3 data-i18n="expertise_6_title">
+              STEM Education & Training
+            </h3>
+
+            <p data-i18n="expertise_6_text">
+              Technical workshops, curriculum development, project
+              supervision and accessible knowledge transfer.
+            </p>
+
+            <div class="tags">
+              <span class="tag">Teaching</span>
+              <span class="tag">Mentoring</span>
+              <span class="tag">Workshops</span>
+              <span class="tag">Azul Academy</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+
+    <section
+      id="projects"
+      class="projects-section"
+    >
+      <div class="container">
+
+        <p
+          class="section-label reveal"
+          data-i18n="projects_label"
+        >
+          Selected work
+        </p>
+
+        <h2
+          class="section-title reveal"
+          data-i18n="projects_title"
+        >
+          Research projects with practical engineering outcomes.
+        </h2>
+
+        <p
+          class="section-description reveal"
+          data-i18n="projects_intro"
+        >
+          A selection of academic and applied projects in antennas,
+          RFID, microwave systems and intelligent localization.
+        </p>
+
+        <div class="projects-list">
+
+          <!-- Project 1 -->
+
+          <article class="project reveal">
+
+            <div
+              class="project-image automatic-image"
+              data-image="image1"
+              data-placeholder="Place image1.jpg, image1.png or image1.webp inside the images folder"
+            >
+              <img
+                alt="Circularly polarized antenna array and Butler matrix project"
+                loading="lazy"
+              >
+            </div>
+
+            <div class="project-content">
+
+              <span
+                class="project-category"
+                data-i18n="project_1_category"
+              >
+                Antenna Array · Energy Harvesting
+              </span>
+
+              <h3 data-i18n="project_1_title">
+                Circularly Polarized Antenna Array for UAV Energy Harvesting
+              </h3>
+
+              <p data-i18n="project_1_text">
+                Design and implementation of a circularly polarized antenna
+                array fed by a 4×4 Butler matrix for directional beamforming
+                and RF energy harvesting applications involving unmanned
+                aerial vehicles.
+              </p>
+
+              <dl class="project-data">
+
+                <div>
+                  <dt data-i18n="period">
+                    Period
+                  </dt>
+
+                  <dd>
+                    2019–2024
+                  </dd>
+                </div>
+
+                <div>
+                  <dt data-i18n="tools">
+                    Tools
+                  </dt>
+
+                  <dd>
+                    CST · ADS · VNA · PCB Prototyping
+                  </dd>
+                </div>
+
+                <div>
+                  <dt data-i18n="focus">
+                    Focus
+                  </dt>
+
+                  <dd data-i18n="project_1_focus">
+                    Beamforming · Circular Polarization
+                  </dd>
+                </div>
+
+                <div>
+                  <dt data-i18n="outcome">
+                    Outcome
+                  </dt>
+
+                  <dd data-i18n="project_1_outcome">
+                    Simulation and measurement validation
+                  </dd>
+                </div>
+
+              </dl>
+
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+
+          <article class="project reveal">
+
+            <div
+              class="project-image automatic-image"
+              data-image="image2"
+              data-placeholder="Place image2.jpg, image2.png or image2.webp inside the images folder"
+            >
+              <img
+                alt="Compact dual-band RFID reader antenna"
+                loading="lazy"
+              >
+            </div>
+
+            <div class="project-content">
+
+              <span
+                class="project-category"
+                data-i18n="project_2_category"
+              >
+                Doctoral Research · RFID
+              </span>
+
+              <h3 data-i18n="project_2_title">
+                Compact Dual-Band RFID Reader Antenna
+              </h3>
+
+              <p data-i18n="project_2_text">
+                Development and optimization of a compact reader antenna
+                operating across two RFID frequency bands, supported by
+                electromagnetic simulation and experimental characterization.
+              </p>
+
+              <dl class="project-data">
+
+                <div>
+                  <dt data-i18n="period">
+                    Period
+                  </dt>
+
+                  <dd>
+                    2016–2019
+                  </dd>
+                </div>
+
+                <div>
+                  <dt data-i18n="tools">
+                    Tools
+                  </dt>
+
+                  <dd>
+                    CST · HFSS · VNA
+                  </dd>
+                </div>
+
+                <div>
+                  <dt data-i18n="focus">
+                    Focus
+                  </dt>
+
+                  <dd data-i18n="project_2_focus">
+                    Dual-Band Operation · Compact Design
+                  </dd>
+                </div>
+
+                <div>
+                  <dt data-i18n="outcome">
+                    Outcome
+                  </dt>
+
+                  <dd data-i18n="project_2_outcome">
+                    Experimental prototype validation
+                  </dd>
+                </div>
+
+              </dl>
+
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+
+          <article class="project reveal">
+
+            <div
+              class="project-image automatic-image"
+              data-image="image3"
+              data-placeholder="Place image3.jpg, image3.png or image3.webp inside the images folder"
+            >
+              <img
+                alt="Artificial intelligence enhanced indoor RFID localization"
+                loading="lazy"
+              >
+            </div>
+
+            <div class="project-content">
+
+              <span
+                class="project-category"
+                data-i18n="project_3_category"
+              >
+                Artificial Intelligence · RFID
+              </span>
+
+              <h3 data-i18n="project_3_title">
+                AI-Enhanced Indoor RFID Localization
+              </h3>
+
+              <p data-i18n="project_3_text">
+                Intelligent indoor localization approach combining RFID
+                measurements, hybrid datasets and supervised machine
+                learning to improve positioning accuracy.
+              </p>
+
+              <dl class="project-data">
+
+                <div>
+                  <dt data-i18n="year">
+                    Year
+                  </dt>
+
+                  <dd>
+                    2024
+                  </dd>
+                </div>
+
+                <div>
+                  <dt data-i18n="tools">
+                    Tools
+                  </dt>
+
+                  <dd>
+                    Python · TensorFlow · Scikit-learn
+                  </dd>
+                </div>
+
+                <div>
+                  <dt data-i18n="method">
+                    Method
+                  </dt>
+
+                  <dd>
+                    SVM · Hybrid Data
+                  </dd>
+                </div>
+
+                <div>
+                  <dt data-i18n="outcome">
+                    Outcome
+                  </dt>
+
+                  <dd data-i18n="project_3_outcome">
+                    Sub-meter localization performance
+                  </dd>
+                </div>
+
+              </dl>
+
+            </div>
+          </article>
+
+          <!-- Project 4 -->
+
+          <article class="project reveal">
+
+            <div
+              class="project-image automatic-image"
+              data-image="image4"
+              data-placeholder="Place image4.jpg, image4.png or image4.webp inside the images folder"
+            >
+              <img
+                alt="CPW-fed fractal antenna for UWB RFID applications"
+                loading="lazy"
+              >
+            </div>
+
+            <div class="project-content">
+
+              <span
+                class="project-category"
+                data-i18n="project_4_category"
+              >
+                Published Research · UWB-RFID
+              </span>
+
+              <h3 data-i18n="project_4_title">
+                CPW-Fed Fractal Antenna for UWB-RFID Applications
+              </h3>
+
+              <p data-i18n="project_4_text">
+                Fractal geometry and coplanar-waveguide feeding were
+                investigated to achieve antenna miniaturization while
+                preserving wideband performance for UWB-RFID applications.
+              </p>
+
+              <dl class="project-data">
+
+                <div>
+                  <dt data-i18n="domain">
+                    Domain
+                  </dt>
+
+                  <dd>
+                    UWB-RFID
+                  </dd>
+                </div>
+
+                <div>
+                  <dt data-i18n="approach">
+                    Approach
+                  </dt>
+
+                  <dd data-i18n="project_4_approach">
+                    CPW Feed · Fractal Geometry
+                  </dd>
+                </div>
+
+                <div>
+                  <dt data-i18n="objective">
+                    Objective
+                  </dt>
+
+                  <dd data-i18n="project_4_objective">
+                    Miniaturization · Wide Bandwidth
+                  </dd>
+                </div>
+
+                <div>
+                  <dt data-i18n="publication">
+                    Publication
+                  </dt>
+
+                  <dd>
+                    Progress In Electromagnetics Research C
+                  </dd>
+                </div>
+
+              </dl>
+
+            </div>
+          </article>
+
+          <!-- Project 5 -->
+
+          <article class="project reveal">
+
+            <div
+              class="project-image automatic-image"
+              data-image="image5"
+              data-placeholder="Place image5.jpg, image5.png or image5.webp inside the images folder"
+            >
+              <img
+                alt="Compact microstrip diplexer for RFID systems"
+                loading="lazy"
+              >
+            </div>
+
+            <div class="project-content">
+
+              <span
+                class="project-category"
+                data-i18n="project_5_category"
+              >
+                Microwave Engineering · RFID
+              </span>
+
+              <h3 data-i18n="project_5_title">
+                Compact Microstrip Diplexer for RFID Systems
+              </h3>
+
+              <p data-i18n="project_5_text">
+                Design of a compact microwave diplexer intended to separate
+                and route RFID frequency channels while maintaining strong
+                isolation and an efficient physical footprint.
+              </p>
+
+              <dl class="project-data">
+
+                <div>
+                  <dt data-i18n="domain">
+                    Domain
+                  </dt>
+
+                  <dd data-i18n="project_5_domain">
+                    Microwave Filters · RFID
+                  </dd>
+                </div>
+
+                <div>
+                  <dt data-i18n="technology">
+                    Technology
+                  </dt>
+
+                  <dd data-i18n="project_5_technology">
+                    Microstrip Structure
+                  </dd>
+                </div>
+
+                <div>
+                  <dt data-i18n="objective">
+                    Objective
+                  </dt>
+
+                  <dd data-i18n="project_5_objective">
+                    Compactness · High Isolation
+                  </dd>
+                </div>
+
+                <div>
+                  <dt data-i18n="publication">
+                    Publication
+                  </dt>
+
+                  <dd>
+                    International Journal of Microwave and Optical Technology
+                  </dd>
+                </div>
+
+              </dl>
+
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Technologies -->
+
+    <section id="technologies">
+      <div class="container">
+
+        <p
+          class="section-label reveal"
+          data-i18n="technology_label"
+        >
+          Tools & technologies
+        </p>
+
+        <h2
+          class="section-title reveal"
+          data-i18n="technology_title"
+        >
+          From electromagnetic simulation to connected prototypes.
+        </h2>
+
+        <p
+          class="section-description reveal"
+          data-i18n="technology_intro"
+        >
+          A technical stack spanning RF engineering, software development,
+          embedded hardware, artificial intelligence and digital fabrication.
+        </p>
+
+        <div class="technology-list reveal">
+          <span>CST Studio Suite</span>
+          <span>ANSYS HFSS</span>
+          <span>Keysight ADS</span>
+          <span>MATLAB</span>
+          <span>VNA Measurements</span>
+          <span>PCB Prototyping</span>
+          <span>Python</span>
+          <span>TensorFlow</span>
+          <span>Scikit-learn</span>
+          <span>Arduino</span>
+          <span>ESP32</span>
+          <span>Raspberry Pi</span>
+          <span>IoT & MQTT</span>
+          <span>MIT App Inventor</span>
+          <span>LEGO Mindstorms EV3</span>
+          <span>Computer Vision</span>
+          <span>3D Design</span>
+          <span>3D Printing</span>
+          <span>Git & GitHub</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Research -->
+
+    <section id="research">
+      <div class="container">
+
+        <p
+          class="section-label reveal"
+          data-i18n="research_label"
+        >
+          Research & publications
+        </p>
+
+        <h2
+          class="section-title reveal"
+          data-i18n="research_title"
+        >
+          Scientific rigor supported by practical validation.
+        </h2>
+
+        <p
+          class="section-description reveal"
+          data-i18n="research_intro"
+        >
+          Research activities focused on antenna engineering, RFID,
+          microwave systems and artificial intelligence for indoor localization.
+        </p>
+
+        <div class="research-grid">
+
+          <article class="research-card reveal">
+
+            <h3 data-i18n="research_themes">
+              Research themes
+            </h3>
+
+            <p data-i18n="research_themes_intro">
+              Core scientific and engineering topics developed through
+              doctoral and applied work.
+            </p>
+
+            <ul class="research-list">
+
+              <li data-i18n="research_theme_1">
+                Circularly polarized antenna arrays and Butler matrices
+              </li>
+
+              <li data-i18n="research_theme_2">
+                Dual-band RFID reader antennas
+              </li>
+
+              <li data-i18n="research_theme_3">
+                UWB-RFID and fractal antenna miniaturization
+              </li>
+
+              <li data-i18n="research_theme_4">
+                Compact microwave diplexers and filtering structures
+              </li>
+
+              <li data-i18n="research_theme_5">
+                AI-supported indoor RFID localization
+              </li>
+
+            </ul>
+
+          </article>
+
+          <article class="research-card reveal">
+
+            <h3 data-i18n="publication_highlights">
+              Publication highlights
+            </h3>
+
+            <p data-i18n="publication_intro">
+              Selected publication and conference venues associated
+              with the featured work.
+            </p>
+
+            <ul class="research-list">
+
+              <li>
+                Progress In Electromagnetics Research C — PIER C
+              </li>
+
+              <li>
+                International Journal of Microwave and Optical Technology —
+                IJMOT
+              </li>
+
+              <li data-i18n="publication_item_3">
+                ICISCT 2025 research presentation on intelligent RFID
+                localization
+              </li>
+
+              <li data-i18n="publication_item_4">
+                Academic research in antennas, microwave engineering
+                and RFID systems
+              </li>
+
+            </ul>
+
+            <a
+              href="documents/Academic%20Antenna%20Design%20Projects.docx"
+              class="button button-secondary"
+              target="_blank"
+              rel="noopener"
+              style="margin-top: 22px;"
+            >
+              <span data-i18n="research_document">
+                View research document
+              </span>
+            </a>
+
+          </article>
+
+        </div>
+
+        <div class="timeline">
+
+          <article class="timeline-item reveal">
+
+            <h3 data-i18n="timeline_1_title">
+              PhD in Electronics & Telecommunications
+            </h3>
+
+            <p data-i18n="timeline_1_text">
+              Advanced research in RFID systems, antenna design, microwave
+              engineering and experimental validation at INPT, Rabat.
+            </p>
+
+          </article>
+
+          <article class="timeline-item reveal">
+
+            <h3 data-i18n="timeline_2_title">
+              Electronics & Telecommunications Engineering
+            </h3>
+
+            <p data-i18n="timeline_2_text">
+              Technical background in telecommunications, electronics,
+              radio-frequency systems, signal transmission and connected
+              technologies.
+            </p>
+
+          </article>
+
+          <article class="timeline-item reveal">
+
+            <h3 data-i18n="timeline_3_title">
+              Robotics & Computer Science Education
+            </h3>
+
+            <p data-i18n="timeline_3_text">
+              Teaching and mentoring learners through practical projects
+              in coding, robotics, electronics, artificial intelligence
+              and digital fabrication.
+            </p>
+
+          </article>
+
+          <article class="timeline-item reveal">
+
+            <h3 data-i18n="timeline_4_title">
+              Founder · Azul Academy
+            </h3>
+
+            <p data-i18n="timeline_4_text">
+              Development of practical STEM learning experiences designed
+              to encourage creativity, problem solving and technological
+              confidence.
+            </p>
+
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+
+    <section id="gallery">
+      <div class="container">
+
+        <p
+          class="section-label reveal"
+          data-i18n="gallery_label"
+        >
+          Project gallery
+        </p>
+
+        <h2
+          class="section-title reveal"
+          data-i18n="gallery_title"
+        >
+          Prototypes, simulations, measurements and learning projects.
+        </h2>
+
+        <p
+          class="section-description reveal"
+          data-i18n="gallery_intro"
+        >
+          The gallery automatically detects files named image1,
+          image2, image3 and so on inside your images folder.
+        </p>
+
+        <div
+          class="gallery-grid reveal empty"
+          id="gallery-grid"
+        >
+
+          <div
+            class="gallery-message"
+            data-i18n="gallery_message"
+          >
+            Place your images inside the images folder and name them
+            image1.jpg, image2.jpg, image3.jpg and so on.
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Contact -->
+
+    <section id="contact">
+      <div class="container">
+
+        <div class="contact-box reveal">
+
+          <p
+            class="section-label"
+            data-i18n="contact_label"
+          >
+            Let’s work together
+          </p>
+
+          <h2 data-i18n="contact_title">
+            Need scientific insight and practical engineering execution?
+          </h2>
+
+          <p data-i18n="contact_text">
+            I am open to engineering, research, consulting, development,
+            training and educational technology opportunities in Morocco
+            and internationally.
+          </p>
+
+          <div class="contact-actions">
+
+            <!-- Replace YOUR_EMAIL with your real email -->
+
+            <a
+              href="mailto:hafidtizyi@gmail.com"
+              class="button button-primary"
+            >
+              <span data-i18n="email_button">
+                Email me
+              </span>
+            </a>
+
+            <!-- Replace each URL below -->
+
+            <a
+              href="https://www.linkedin.com/in/tizyi-hafid-a1079b62/"
+              class="button button-secondary"
+              target="_blank"
+              rel="noopener"
+            >
+              LinkedIn
+            </a>
+
+            <a
+              href="https://github.com/TIZYI"
+              class="button button-secondary"
+              target="_blank"
+              rel="noopener"
+            >
+              GitHub
+            </a>
+
+            <a
+              href="https://www.upwork.com/freelancers/~01b4da7cd534c06723"
+              class="button button-secondary"
+              target="_blank"
+              rel="noopener"
+            >
+              Upwork
+            </a>
+
+            <a
+              href="https://www.researchgate.net/profile/Tizyi-Hafid?ev=hdr_xprf"
+              class="button button-secondary"
+              target="_blank"
+              rel="noopener"
+            >
+              ResearchGate
+            </a>
+
+          </div>
+
+          <p
+            class="contact-note"
+            data-i18n="contact_note"
+          >
+            Replace the contact placeholders in the HTML file with
+            your real email and profile links before publication.
+          </p>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+
+      <p>
+        <strong>
+          Dr. Hafid Tizyi
+        </strong>
+
+        <span data-i18n="footer_role">
+          · Electronics & Telecommunications Engineer
+        </span>
+      </p>
+
+      <p>
+        RFID · Antennas · Embedded Systems · IoT · AI · Robotics · STEM
+      </p>
+
+    </div>
+  </footer>
+
+  <!-- Gallery modal -->
+
+  <div
+    class="modal"
+    id="image-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Project image preview"
+  >
+
+    <div class="modal-content">
+
+      <button
+        class="modal-close"
+        id="modal-close"
+        aria-label="Close image"
+      >
+        ×
+      </button>
+
+      <img
+        id="modal-image"
+        src=""
+        alt="Expanded project image"
+      >
+
     </div>
   </div>
-</section>
 
-<!-- ══ SKILLS ════════════════════════════ -->
-<section id="skills">
-  <div class="wrap">
-    <div class="sh"><span class="sh-label">Expertise</span><span class="sh-line"></span></div>
-    <h2 class="sec-title">What I bring to your project</h2>
-    <p class="sec-sub">End-to-end engineering — simulation, layout, firmware, and prototyping.</p>
-    <div class="skills-grid">
-      <div class="sk">
-        <div class="sk-icon">📡</div>
-        <div class="sk-title">EM Simulation</div>
-        <div class="sk-tools">
-          <strong>Tools</strong>
-          CST Microwave Studio · Ansoft HFSS · Keysight ADS<br>
-          Antenna arrays, RF filters, S-parameters, radiation patterns, signal integrity
-        </div>
-      </div>
-      <div class="sk">
-        <div class="sk-icon">🖥️</div>
-        <div class="sk-title">PCB & Schematic Design</div>
-        <div class="sk-tools">
-          <strong>Tools</strong>
-          Altium Designer · OrCAD · ISIS Proteus<br>
-          Multi-layer layout, impedance control, DRC/ERC, BOM generation
-        </div>
-      </div>
-      <div class="sk">
-        <div class="sk-icon">💻</div>
-        <div class="sk-title">Programming</div>
-        <div class="sk-tools">
-          <strong>Languages</strong>
-          MATLAB · Python · C<br>
-          Signal processing, automation, data analysis, algorithm development
-        </div>
-      </div>
-      <div class="sk">
-        <div class="sk-icon">⚙️</div>
-        <div class="sk-title">Embedded & Robotics</div>
-        <div class="sk-tools">
-          <strong>Platforms</strong>
-          Arduino · Raspberry Pi · Robotics<br>
-          Firmware, IoT, sensor integration, control systems, PID
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+  <script>
+    (() => {
+      "use strict";
 
-<!-- ══ PROJECTS ══════════════════════════ -->
-<section id="projects">
-  <div class="wrap">
-    <div class="sh"><span class="sh-label">Portfolio</span><span class="sh-line"></span></div>
-    <h2 class="sec-title">Selected projects</h2>
-    <p class="sec-sub">Real engineering work across simulation, PCB design, and embedded systems.</p>
+      const translations = {
+        en: {
+          page_title:
+            "Dr. Hafid Tizyi | Electronics & Telecommunications Engineer",
 
-    <div class="projects-list">
+          meta_description:
+            "Professional portfolio of Dr. Hafid Tizyi, Electronics and Telecommunications Engineer specialized in RFID, antenna design, embedded systems, IoT, Python, artificial intelligence, robotics and STEM education.",
 
-      <!-- PROJECT 1 -->
-      <div class="project">
-        <!-- 📸 IMAGE 1: Remplacez ce bloc par votre image CST/HFSS
-             Exemple : <img src="images/antenne-5g.jpg" alt="Antenne patch 5G" style="width:100%;height:100%;object-fit:cover;border-radius:14px;">
-        -->
-        <div class="img-placeholder">
-          <div class="ph-icon">📡</div>
-          <div class="ph-label">
-            <strong>📸 Ajoutez votre image ici</strong>
-            Capture d'écran CST ou HFSS de votre antenne patch / réseau d'antennes
-            <code>&lt;img src="images/antenne-5g.jpg" ...&gt;</code>
-          </div>
-        </div>
-        <div>
-          <div class="proj-cat">EM Simulation · Antenna</div>
-          <div class="proj-title">Microstrip Patch Antenna Array — 28 GHz (5G)</div>
-          <p class="proj-desc">
-            Designed and simulated a 4×4 microstrip patch antenna array for millimeter-wave 5G applications. Full parametric study with S-parameter sweeps and 3D radiation pattern analysis.
-          </p>
-          <div class="proj-tags">
-            <span class="ptag hi">CST Microwave Studio</span>
-            <span class="ptag">5G / mmWave</span>
-            <span class="ptag">S-parameters</span>
-            <span class="ptag">Patch Antenna</span>
-          </div>
-          <div class="proj-specs">
-            <div class="spec"><div class="spec-k">Frequency</div><div class="spec-v">28 GHz</div></div>
-            <div class="spec"><div class="spec-k">Gain</div><div class="spec-v">18 dBi</div></div>
-            <div class="spec"><div class="spec-k">Return Loss</div><div class="spec-v">&lt; –15 dB</div></div>
-            <div class="spec"><div class="spec-k">Array</div><div class="spec-v">4×4 elements</div></div>
-          </div>
-        </div>
-      </div>
+          skip_content:
+            "Skip to content",
 
-      <!-- PROJECT 2 (reverse) -->
-      <div class="project reverse">
-        <!-- 📸 IMAGE 2: Remplacez ce bloc par votre image Altium/PCB
-             Exemple : <img src="images/pcb-rf.jpg" alt="PCB RF 2.4GHz" style="width:100%;height:100%;object-fit:cover;border-radius:14px;">
-        -->
-        <div class="img-placeholder">
-          <div class="ph-icon">🖥️</div>
-          <div class="ph-label">
-            <strong>📸 Ajoutez votre image ici</strong>
-            Capture d'écran Altium — layout PCB ou vue 3D du circuit
-            <code>&lt;img src="images/pcb-rf.jpg" ...&gt;</code>
-          </div>
-        </div>
-        <div>
-          <div class="proj-cat">PCB Design · RF Layout</div>
-          <div class="proj-title">4-Layer RF Transceiver PCB — 2.4 GHz</div>
-          <p class="proj-desc">
-            Designed a compact 4-layer PCB for a 2.4 GHz RF transceiver. Features controlled-impedance transmission lines (50 Ω), separated power/ground planes, and full DRC compliance.
-          </p>
-          <div class="proj-tags">
-            <span class="ptag hi">Altium Designer</span>
-            <span class="ptag">2.4 GHz</span>
-            <span class="ptag">4-Layer</span>
-            <span class="ptag">Impedance Control</span>
-          </div>
-          <div class="proj-specs">
-            <div class="spec"><div class="spec-k">Layers</div><div class="spec-v">4</div></div>
-            <div class="spec"><div class="spec-k">Impedance</div><div class="spec-v">50 Ω</div></div>
-            <div class="spec"><div class="spec-k">Frequency</div><div class="spec-v">2.4 GHz</div></div>
-            <div class="spec"><div class="spec-k">Standard</div><div class="spec-v">IPC-2221</div></div>
-          </div>
-        </div>
-      </div>
+          nav_about:
+            "About",
 
-      <!-- PROJECT 3 -->
-      <div class="project">
-        <!-- 📸 IMAGE 3: Remplacez ce bloc par votre image Arduino / robot
-             Exemple : <img src="images/robot-arduino.jpg" alt="Robot Arduino" style="width:100%;height:100%;object-fit:cover;border-radius:14px;">
-        -->
-        <div class="img-placeholder">
-          <div class="ph-icon">⚙️</div>
-          <div class="ph-label">
-            <strong>📸 Ajoutez votre image ici</strong>
-            Photo du robot ou capture ISIS Proteus du schéma
-            <code>&lt;img src="images/robot-arduino.jpg" ...&gt;</code>
-          </div>
-        </div>
-        <div>
-          <div class="proj-cat">Embedded System · Robotics</div>
-          <div class="proj-title">Autonomous Line-Following Robot</div>
-          <p class="proj-desc">
-            Built a fully autonomous robot using Arduino Mega with IR sensor array and PID control loop. Custom PCB designed in ISIS Proteus, firmware in C, Bluetooth telemetry for real-time monitoring.
-          </p>
-          <div class="proj-tags">
-            <span class="ptag hi">Arduino</span>
-            <span class="ptag">ISIS Proteus</span>
-            <span class="ptag">PID Control</span>
-            <span class="ptag">C Firmware</span>
-          </div>
-          <div class="proj-specs">
-            <div class="spec"><div class="spec-k">Controller</div><div class="spec-v">Arduino Mega</div></div>
-            <div class="spec"><div class="spec-k">Control</div><div class="spec-v">PID loop</div></div>
-            <div class="spec"><div class="spec-k">Sensors</div><div class="spec-v">IR array</div></div>
-            <div class="spec"><div class="spec-k">Wireless</div><div class="spec-v">Bluetooth</div></div>
-          </div>
-        </div>
-      </div>
+          nav_expertise:
+            "Expertise",
 
-      <!-- PROJECT 4 (reverse) -->
-      <div class="project reverse">
-        <!-- 📸 IMAGE 4: Remplacez ce bloc par votre image MATLAB
-             Exemple : <img src="images/ofdm-matlab.png" alt="OFDM MATLAB" style="width:100%;height:100%;object-fit:cover;border-radius:14px;">
-        -->
-        <div class="img-placeholder">
-          <div class="ph-icon">💻</div>
-          <div class="ph-label">
-            <strong>📸 Ajoutez votre image ici</strong>
-            Courbe BER, constellation ou résultats MATLAB
-            <code>&lt;img src="images/ofdm-matlab.png" ...&gt;</code>
-          </div>
-        </div>
-        <div>
-          <div class="proj-cat">Signal Processing · MATLAB</div>
-          <div class="proj-title">OFDM Signal Analyzer & BER Simulation</div>
-          <p class="proj-desc">
-            Implemented a complete OFDM chain in MATLAB — modulation, channel modeling (AWGN, Rayleigh), equalization, and BER vs SNR analysis. Used for academic research and teaching digital communications.
-          </p>
-          <div class="proj-tags">
-            <span class="ptag hi">MATLAB</span>
-            <span class="ptag">OFDM</span>
-            <span class="ptag">BER Analysis</span>
-            <span class="ptag">Channel Modeling</span>
-          </div>
-          <div class="proj-specs">
-            <div class="spec"><div class="spec-k">Modulation</div><div class="spec-v">OFDM / QAM</div></div>
-            <div class="spec"><div class="spec-k">Channel</div><div class="spec-v">AWGN / Rayleigh</div></div>
-            <div class="spec"><div class="spec-k">Tool</div><div class="spec-v">MATLAB R2023</div></div>
-            <div class="spec"><div class="spec-k">Output</div><div class="spec-v">BER vs SNR</div></div>
-          </div>
-        </div>
-      </div>
+          nav_projects:
+            "Projects",
 
-      <!-- PROJECT 5 -->
-      <div class="project">
-        <!-- 📸 IMAGE 5: Remplacez ce bloc par votre image Raspberry Pi / IoT
-             Exemple : <img src="images/iot-station.jpg" alt="Station IoT" style="width:100%;height:100%;object-fit:cover;border-radius:14px;">
-        -->
-        <div class="img-placeholder">
-          <div class="ph-icon">🍓</div>
-          <div class="ph-label">
-            <strong>📸 Ajoutez votre image ici</strong>
-            Photo du montage Raspberry Pi ou capture du dashboard
-            <code>&lt;img src="images/iot-station.jpg" ...&gt;</code>
-          </div>
-        </div>
-        <div>
-          <div class="proj-cat">IoT · Raspberry Pi</div>
-          <div class="proj-title">Remote Environment Monitoring Station</div>
-          <p class="proj-desc">
-            Designed an IoT monitoring station measuring temperature, humidity, and CO₂ using Raspberry Pi 4 and Python. Data streamed via MQTT protocol and displayed on a local web dashboard.
-          </p>
-          <div class="proj-tags">
-            <span class="ptag hi">Raspberry Pi 4</span>
-            <span class="ptag">Python</span>
-            <span class="ptag">MQTT</span>
-            <span class="ptag">IoT Dashboard</span>
-          </div>
-          <div class="proj-specs">
-            <div class="spec"><div class="spec-k">Platform</div><div class="spec-v">Raspberry Pi 4</div></div>
-            <div class="spec"><div class="spec-k">Protocol</div><div class="spec-v">MQTT</div></div>
-            <div class="spec"><div class="spec-k">Language</div><div class="spec-v">Python 3</div></div>
-            <div class="spec"><div class="spec-k">Sensors</div><div class="spec-v">Temp / RH / CO₂</div></div>
-          </div>
-        </div>
-      </div>
+          nav_research:
+            "Research",
 
-    </div>
-  </div>
-</section>
+          nav_gallery:
+            "Gallery",
 
-<!-- ══ TOOLS ═════════════════════════════ -->
-<section id="tools">
-  <div class="wrap">
-    <div class="sh"><span class="sh-label">Toolbox</span><span class="sh-line"></span></div>
-    <h2 class="sec-title">Software & platforms</h2>
-    <p class="sec-sub">Industry-standard tools across every stage of the engineering workflow.</p>
-    <div class="tools-cats">
-      <div>
-        <div class="tool-cat-label">EM Simulation</div>
-        <div class="tools-row">
-          <div class="tool-pill"><span class="dot dy"></span>CST Microwave Studio</div>
-          <div class="tool-pill"><span class="dot dy"></span>Ansoft HFSS</div>
-          <div class="tool-pill"><span class="dot dy"></span>Keysight ADS</div>
-        </div>
-      </div>
-      <div>
-        <div class="tool-cat-label">PCB & Schematic</div>
-        <div class="tools-row">
-          <div class="tool-pill"><span class="dot db"></span>Altium Designer</div>
-          <div class="tool-pill"><span class="dot db"></span>OrCAD</div>
-          <div class="tool-pill"><span class="dot db"></span>ISIS Proteus</div>
-        </div>
-      </div>
-      <div>
-        <div class="tool-cat-label">Programming</div>
-        <div class="tools-row">
-          <div class="tool-pill"><span class="dot dm"></span>MATLAB</div>
-          <div class="tool-pill"><span class="dot dm"></span>Python 3</div>
-          <div class="tool-pill"><span class="dot dm"></span>C / C++</div>
-        </div>
-      </div>
-      <div>
-        <div class="tool-cat-label">Embedded & Hardware</div>
-        <div class="tools-row">
-          <div class="tool-pill"><span class="dot dp"></span>Arduino</div>
-          <div class="tool-pill"><span class="dot dp"></span>Raspberry Pi</div>
-          <div class="tool-pill"><span class="dot dp"></span>Linux</div>
-          <div class="tool-pill"><span class="dot dp"></span>Git / GitHub</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+          nav_contact:
+            "Contact",
 
-<!-- ══ CONTACT ════════════════════════════ -->
-<section id="contact">
-  <div class="wrap">
-    <div class="contact-wrap">
-      <h2>Let's build something great</h2>
-      <p>Have a project involving RF design, PCB layout, simulation, or embedded systems? I'm available for freelance work on Upwork.</p>
-      <div class="contact-links">
-        <a href="mailto:votre.email@example.com" class="c-link">✉️ votre.email@example.com</a>
-        <a href="https://www.upwork.com/freelancers/~VOTRE_ID" target="_blank" class="c-link">🔗 Upwork Profile</a>
-        <a href="https://www.linkedin.com/in/VOTRE_PROFIL" target="_blank" class="c-link">💼 LinkedIn</a>
-      </div>
-    </div>
-  </div>
-</section>
+          hero_eyebrow:
+            "Engineering · Research · Education",
 
-<footer>
-  Built with precision — just like the circuits &nbsp;·&nbsp; <em>RF & Embedded Systems Engineer</em> &nbsp;·&nbsp; Ph.D. · INPT Morocco
-</footer>
+          hero_role:
+            "Electronics & Telecommunications Engineer · RFID & Antenna Specialist · Embedded Systems, IoT & Robotics Educator",
+
+          hero_description:
+            "I combine scientific research, engineering practice and technical education to develop practical solutions in antenna design, RFID, embedded systems, IoT, Python, artificial intelligence and robotics.",
+
+          view_projects:
+            "Explore my projects",
+
+          download_cv:
+            "Download CV",
+
+          specialization_1:
+            "RF & Antenna Design",
+
+          specialization_2:
+            "RFID Systems",
+
+          specialization_3:
+            "Embedded Systems & IoT",
+
+          specialization_4:
+            "Python & AI",
+
+          specialization_5:
+            "Robotics & STEM Training",
+
+          profile_degree:
+            "PhD",
+
+          profile_degree_text:
+            "Electronics & Telecommunications",
+
+          profile_engineering:
+            "Engineering",
+
+          profile_engineering_text:
+            "RF, Embedded Systems & IoT",
+
+          profile_research:
+            "Research",
+
+          profile_research_text:
+            "RFID, Antennas & AI Localization",
+
+          profile_education:
+            "Education",
+
+          profile_education_text:
+            "Robotics, Coding & STEM",
+
+          about_label:
+            "Professional profile",
+
+          about_title:
+            "Technology becomes valuable when it solves a real need.",
+
+          about_intro:
+            "My work bridges advanced research and hands-on implementation, with a strong focus on clear communication, reliable results and knowledge transfer.",
+
+          about_p1:
+            "I am an Electronics and Telecommunications Engineer with a PhD in Electronics and Telecommunications. My academic work focuses on RFID systems, antenna design, microwave structures and intelligent indoor localization.",
+
+          about_p2:
+            "My technical practice also covers Python programming, Arduino, ESP32, Raspberry Pi, embedded development, IoT, artificial intelligence, computer vision, mobile applications, 3D design and 3D printing.",
+
+          about_p3:
+            "Alongside engineering and research, I teach robotics and computer science and founded <strong>Azul Academy</strong>, a learning environment dedicated to robotics, programming, STEM and innovation through practical projects.",
+
+          about_quote:
+            "I bring together research depth, engineering discipline and educational clarity to transform complex technical ideas into practical, understandable solutions.",
+
+          about_footer:
+            "Dr. Hafid Tizyi · Morocco",
+
+          expertise_label:
+            "Core expertise",
+
+          expertise_title:
+            "A multidisciplinary profile built for research and real-world projects.",
+
+          expertise_intro:
+            "Services and capabilities suitable for engineering teams, research institutions, educational organizations and international projects.",
+
+          expertise_1_title:
+            "RF, Antenna & Microwave Design",
+
+          expertise_1_text:
+            "Design, simulation, optimization and experimental validation of antennas and microwave structures.",
+
+          expertise_2_title:
+            "RFID Systems",
+
+          expertise_2_text:
+            "Reader antennas, UWB-RFID structures, dual-band systems, diplexers and intelligent indoor localization.",
+
+          expertise_3_title:
+            "Embedded Systems & IoT",
+
+          expertise_3_text:
+            "Connected prototypes, sensor integration, embedded programming and smart monitoring applications.",
+
+          expertise_4_title:
+            "Python, AI & Computer Vision",
+
+          expertise_4_text:
+            "Machine learning workflows, data processing, intelligent classification and educational AI applications.",
+
+          expertise_5_title:
+            "Robotics & Digital Fabrication",
+
+          expertise_5_text:
+            "Educational robotics, mobile applications, rapid prototyping, 3D design and 3D printing.",
+
+          expertise_6_title:
+            "STEM Education & Training",
+
+          expertise_6_text:
+            "Technical workshops, curriculum development, project supervision and accessible knowledge transfer.",
+
+          projects_label:
+            "Selected work",
+
+          projects_title:
+            "Research projects with practical engineering outcomes.",
+
+          projects_intro:
+            "A selection of academic and applied projects in antennas, RFID, microwave systems and intelligent localization.",
+
+          project_1_category:
+            "Antenna Array · Energy Harvesting",
+
+          project_1_title:
+            "Circularly Polarized Antenna Array for UAV Energy Harvesting",
+
+          project_1_text:
+            "Design and implementation of a circularly polarized antenna array fed by a 4×4 Butler matrix for directional beamforming and RF energy harvesting applications involving unmanned aerial vehicles.",
+
+          project_1_focus:
+            "Beamforming · Circular Polarization",
+
+          project_1_outcome:
+            "Simulation and measurement validation",
+
+          project_2_category:
+            "Doctoral Research · RFID",
+
+          project_2_title:
+            "Compact Dual-Band RFID Reader Antenna",
+
+          project_2_text:
+            "Development and optimization of a compact reader antenna operating across two RFID frequency bands, supported by electromagnetic simulation and experimental characterization.",
+
+          project_2_focus:
+            "Dual-Band Operation · Compact Design",
+
+          project_2_outcome:
+            "Experimental prototype validation",
+
+          project_3_category:
+            "Artificial Intelligence · RFID",
+
+          project_3_title:
+            "AI-Enhanced Indoor RFID Localization",
+
+          project_3_text:
+            "Intelligent indoor localization approach combining RFID measurements, hybrid datasets and supervised machine learning to improve positioning accuracy.",
+
+          project_3_outcome:
+            "Sub-meter localization performance",
+
+          project_4_category:
+            "Published Research · UWB-RFID",
+
+          project_4_title:
+            "CPW-Fed Fractal Antenna for UWB-RFID Applications",
+
+          project_4_text:
+            "Fractal geometry and coplanar-waveguide feeding were investigated to achieve antenna miniaturization while preserving wideband performance for UWB-RFID applications.",
+
+          project_4_approach:
+            "CPW Feed · Fractal Geometry",
+
+          project_4_objective:
+            "Miniaturization · Wide Bandwidth",
+
+          project_5_category:
+            "Microwave Engineering · RFID",
+
+          project_5_title:
+            "Compact Microstrip Diplexer for RFID Systems",
+
+          project_5_text:
+            "Design of a compact microwave diplexer intended to separate and route RFID frequency channels while maintaining strong isolation and an efficient physical footprint.",
+
+          project_5_domain:
+            "Microwave Filters · RFID",
+
+          project_5_technology:
+            "Microstrip Structure",
+
+          project_5_objective:
+            "Compactness · High Isolation",
+
+          period:
+            "Period",
+
+          year:
+            "Year",
+
+          tools:
+            "Tools",
+
+          focus:
+            "Focus",
+
+          outcome:
+            "Outcome",
+
+          method:
+            "Method",
+
+          domain:
+            "Domain",
+
+          approach:
+            "Approach",
+
+          objective:
+            "Objective",
+
+          publication:
+            "Publication",
+
+          technology:
+            "Technology",
+
+          technology_label:
+            "Tools & technologies",
+
+          technology_title:
+            "From electromagnetic simulation to connected prototypes.",
+
+          technology_intro:
+            "A technical stack spanning RF engineering, software development, embedded hardware, artificial intelligence and digital fabrication.",
+
+          research_label:
+            "Research & publications",
+
+          research_title:
+            "Scientific rigor supported by practical validation.",
+
+          research_intro:
+            "Research activities focused on antenna engineering, RFID, microwave systems and artificial intelligence for indoor localization.",
+
+          research_themes:
+            "Research themes",
+
+          research_themes_intro:
+            "Core scientific and engineering topics developed through doctoral and applied work.",
+
+          research_theme_1:
+            "Circularly polarized antenna arrays and Butler matrices",
+
+          research_theme_2:
+            "Dual-band RFID reader antennas",
+
+          research_theme_3:
+            "UWB-RFID and fractal antenna miniaturization",
+
+          research_theme_4:
+            "Compact microwave diplexers and filtering structures",
+
+          research_theme_5:
+            "AI-supported indoor RFID localization",
+
+          publication_highlights:
+            "Publication highlights",
+
+          publication_intro:
+            "Selected publication and conference venues associated with the featured work.",
+
+          publication_item_3:
+            "ICISCT 2025 research presentation on intelligent RFID localization",
+
+          publication_item_4:
+            "Academic research in antennas, microwave engineering and RFID systems",
+
+          research_document:
+            "View research document",
+
+          timeline_1_title:
+            "PhD in Electronics & Telecommunications",
+
+          timeline_1_text:
+            "Advanced research in RFID systems, antenna design, microwave engineering and experimental validation at INPT, Rabat.",
+
+          timeline_2_title:
+            "Electronics & Telecommunications Engineering",
+
+          timeline_2_text:
+            "Technical background in telecommunications, electronics, radio-frequency systems, signal transmission and connected technologies.",
+
+          timeline_3_title:
+            "Robotics & Computer Science Education",
+
+          timeline_3_text:
+            "Teaching and mentoring learners through practical projects in coding, robotics, electronics, artificial intelligence and digital fabrication.",
+
+          timeline_4_title:
+            "Founder · Azul Academy",
+
+          timeline_4_text:
+            "Development of practical STEM learning experiences designed to encourage creativity, problem solving and technological confidence.",
+
+          gallery_label:
+            "Project gallery",
+
+          gallery_title:
+            "Prototypes, simulations, measurements and learning projects.",
+
+          gallery_intro:
+            "The gallery automatically detects files named image1, image2, image3 and so on inside your images folder.",
+
+          gallery_message:
+            "Place your images inside the images folder and name them image1.jpg, image2.jpg, image3.jpg and so on.",
+
+          gallery_image:
+            "Project image",
+
+          contact_label:
+            "Let’s work together",
+
+          contact_title:
+            "Need scientific insight and practical engineering execution?",
+
+          contact_text:
+            "I am open to engineering, research, consulting, development, training and educational technology opportunities in Morocco and internationally.",
+
+          email_button:
+            "Email me",
+
+          contact_note:
+            "Replace the contact placeholders in the HTML file with your real email and profile links before publication.",
+
+          footer_role:
+            "· Electronics & Telecommunications Engineer"
+        },
+
+        fr: {
+          page_title:
+            "Dr Hafid Tizyi | Ingénieur en électronique et télécommunications",
+
+          meta_description:
+            "Portfolio professionnel du Dr Hafid Tizyi, ingénieur en électronique et télécommunications spécialisé en RFID, conception d’antennes, systèmes embarqués, IoT, Python, intelligence artificielle, robotique et éducation STEM.",
+
+          skip_content:
+            "Aller au contenu",
+
+          nav_about:
+            "À propos",
+
+          nav_expertise:
+            "Expertise",
+
+          nav_projects:
+            "Projets",
+
+          nav_research:
+            "Recherche",
+
+          nav_gallery:
+            "Galerie",
+
+          nav_contact:
+            "Contact",
+
+          hero_eyebrow:
+            "Ingénierie · Recherche · Formation",
+
+          hero_role:
+            "Ingénieur en électronique et télécommunications · Spécialiste RFID et antennes · Formateur en systèmes embarqués, IoT et robotique",
+
+          hero_description:
+            "J’associe la recherche scientifique, la pratique de l’ingénierie et la formation technique afin de développer des solutions concrètes en conception d’antennes, RFID, systèmes embarqués, IoT, Python, intelligence artificielle et robotique.",
+
+          view_projects:
+            "Découvrir mes projets",
+
+          download_cv:
+            "Télécharger mon CV",
+
+          specialization_1:
+            "Conception RF et antennes",
+
+          specialization_2:
+            "Systèmes RFID",
+
+          specialization_3:
+            "Systèmes embarqués et IoT",
+
+          specialization_4:
+            "Python et IA",
+
+          specialization_5:
+            "Robotique et formation STEM",
+
+          profile_degree:
+            "Doctorat",
+
+          profile_degree_text:
+            "Électronique et télécommunications",
+
+          profile_engineering:
+            "Ingénierie",
+
+          profile_engineering_text:
+            "RF, systèmes embarqués et IoT",
+
+          profile_research:
+            "Recherche",
+
+          profile_research_text:
+            "RFID, antennes et localisation par IA",
+
+          profile_education:
+            "Formation",
+
+          profile_education_text:
+            "Robotique, programmation et STEM",
+
+          about_label:
+            "Profil professionnel",
+
+          about_title:
+            "La technologie prend toute sa valeur lorsqu’elle répond à un besoin réel.",
+
+          about_intro:
+            "Mon travail relie la recherche avancée à la mise en œuvre pratique, avec une attention particulière portée à la clarté, à la fiabilité des résultats et au partage des connaissances.",
+
+          about_p1:
+            "Je suis ingénieur en électronique et télécommunications, titulaire d’un doctorat en électronique et télécommunications. Mes travaux académiques portent sur les systèmes RFID, la conception d’antennes, les structures micro-ondes et la localisation intelligente en environnement intérieur.",
+
+          about_p2:
+            "Ma pratique technique couvre également la programmation Python, Arduino, ESP32, Raspberry Pi, le développement embarqué, l’IoT, l’intelligence artificielle, la vision par ordinateur, le développement d’applications mobiles, la conception 3D et l’impression 3D.",
+
+          about_p3:
+            "Parallèlement à l’ingénierie et à la recherche, j’enseigne la robotique et l’informatique et j’ai fondé <strong>Azul Academy</strong>, un environnement d’apprentissage consacré à la robotique, à la programmation, aux STEM et à l’innovation par des projets pratiques.",
+
+          about_quote:
+            "J’associe la profondeur scientifique, la rigueur de l’ingénierie et la pédagogie afin de transformer des idées techniques complexes en solutions concrètes et compréhensibles.",
+
+          about_footer:
+            "Dr Hafid Tizyi · Maroc",
+
+          expertise_label:
+            "Domaines d’expertise",
+
+          expertise_title:
+            "Un profil multidisciplinaire au service de la recherche et des projets concrets.",
+
+          expertise_intro:
+            "Des compétences adaptées aux équipes d’ingénierie, aux établissements de recherche, aux organismes de formation et aux projets internationaux.",
+
+          expertise_1_title:
+            "Conception RF, antennes et micro-ondes",
+
+          expertise_1_text:
+            "Conception, simulation, optimisation et validation expérimentale d’antennes et de structures micro-ondes.",
+
+          expertise_2_title:
+            "Systèmes RFID",
+
+          expertise_2_text:
+            "Antennes lecteurs, structures UWB-RFID, systèmes double bande, diplexeurs et localisation intérieure intelligente.",
+
+          expertise_3_title:
+            "Systèmes embarqués et IoT",
+
+          expertise_3_text:
+            "Prototypes connectés, intégration de capteurs, programmation embarquée et applications de supervision intelligente.",
+
+          expertise_4_title:
+            "Python, IA et vision par ordinateur",
+
+          expertise_4_text:
+            "Apprentissage automatique, traitement de données, classification intelligente et applications éducatives fondées sur l’IA.",
+
+          expertise_5_title:
+            "Robotique et fabrication numérique",
+
+          expertise_5_text:
+            "Robotique éducative, applications mobiles, prototypage rapide, conception 3D et impression 3D.",
+
+          expertise_6_title:
+            "Éducation STEM et formation",
+
+          expertise_6_text:
+            "Ateliers techniques, conception de programmes, encadrement de projets et transmission accessible des connaissances.",
+
+          projects_label:
+            "Projets sélectionnés",
+
+          projects_title:
+            "Des projets de recherche associés à une approche d’ingénierie pratique.",
+
+          projects_intro:
+            "Une sélection de projets académiques et appliqués en antennes, RFID, systèmes micro-ondes et localisation intelligente.",
+
+          project_1_category:
+            "Réseau d’antennes · Récupération d’énergie",
+
+          project_1_title:
+            "Réseau d’antennes à polarisation circulaire pour la récupération d’énergie par drone",
+
+          project_1_text:
+            "Conception et réalisation d’un réseau d’antennes à polarisation circulaire alimenté par une matrice de Butler 4×4 pour la formation de faisceaux directionnels et la récupération d’énergie RF dans des applications impliquant des drones.",
+
+          project_1_focus:
+            "Formation de faisceaux · Polarisation circulaire",
+
+          project_1_outcome:
+            "Validation par simulations et mesures",
+
+          project_2_category:
+            "Recherche doctorale · RFID",
+
+          project_2_title:
+            "Antenne lecteur RFID compacte double bande",
+
+          project_2_text:
+            "Développement et optimisation d’une antenne lecteur compacte fonctionnant sur deux bandes RFID, avec simulation électromagnétique et caractérisation expérimentale.",
+
+          project_2_focus:
+            "Fonctionnement double bande · Conception compacte",
+
+          project_2_outcome:
+            "Validation expérimentale du prototype",
+
+          project_3_category:
+            "Intelligence artificielle · RFID",
+
+          project_3_title:
+            "Localisation RFID intérieure améliorée par l’intelligence artificielle",
+
+          project_3_text:
+            "Approche intelligente de localisation intérieure combinant des mesures RFID, des données hybrides et un apprentissage supervisé afin d’améliorer la précision de positionnement.",
+
+          project_3_outcome:
+            "Précision de localisation inférieure au mètre",
+
+          project_4_category:
+            "Recherche publiée · UWB-RFID",
+
+          project_4_title:
+            "Antenne fractale alimentée par CPW pour les applications UWB-RFID",
+
+          project_4_text:
+            "Étude d’une géométrie fractale et d’une alimentation par guide coplanaire afin de miniaturiser l’antenne tout en conservant des performances large bande pour les applications UWB-RFID.",
+
+          project_4_approach:
+            "Alimentation CPW · Géométrie fractale",
+
+          project_4_objective:
+            "Miniaturisation · Large bande",
+
+          project_5_category:
+            "Ingénierie micro-ondes · RFID",
+
+          project_5_title:
+            "Diplexeur microruban compact pour les systèmes RFID",
+
+          project_5_text:
+            "Conception d’un diplexeur micro-ondes compact destiné à séparer et acheminer les canaux de fréquence RFID tout en assurant une forte isolation et un encombrement réduit.",
+
+          project_5_domain:
+            "Filtres micro-ondes · RFID",
+
+          project_5_technology:
+            "Structure microruban",
+
+          project_5_objective:
+            "Compacité · Forte isolation",
+
+          period:
+            "Période",
+
+          year:
+            "Année",
+
+          tools:
+            "Outils",
+
+          focus:
+            "Axes",
+
+          outcome:
+            "Résultat",
+
+          method:
+            "Méthode",
+
+          domain:
+            "Domaine",
+
+          approach:
+            "Approche",
+
+          objective:
+            "Objectif",
+
+          publication:
+            "Publication",
+
+          technology:
+            "Technologie",
+
+          technology_label:
+            "Outils et technologies",
+
+          technology_title:
+            "De la simulation électromagnétique aux prototypes connectés.",
+
+          technology_intro:
+            "Un ensemble de compétences couvrant l’ingénierie RF, le développement logiciel, le matériel embarqué, l’intelligence artificielle et la fabrication numérique.",
+
+          research_label:
+            "Recherche et publications",
+
+          research_title:
+            "Une rigueur scientifique appuyée par la validation pratique.",
+
+          research_intro:
+            "Des activités de recherche consacrées aux antennes, à la RFID, aux systèmes micro-ondes et à l’intelligence artificielle appliquée à la localisation intérieure.",
+
+          research_themes:
+            "Thématiques de recherche",
+
+          research_themes_intro:
+            "Principaux axes scientifiques et techniques développés dans le cadre des travaux doctoraux et appliqués.",
+
+          research_theme_1:
+            "Réseaux d’antennes à polarisation circulaire et matrices de Butler",
+
+          research_theme_2:
+            "Antennes lecteurs RFID double bande",
+
+          research_theme_3:
+            "UWB-RFID et miniaturisation d’antennes fractales",
+
+          research_theme_4:
+            "Diplexeurs micro-ondes compacts et structures de filtrage",
+
+          research_theme_5:
+            "Localisation RFID intérieure assistée par intelligence artificielle",
+
+          publication_highlights:
+            "Publications et communications",
+
+          publication_intro:
+            "Principales revues et conférences associées aux projets présentés.",
+
+          publication_item_3:
+            "Présentation à l’ICISCT 2025 sur la localisation RFID intelligente",
+
+          publication_item_4:
+            "Travaux académiques en antennes, ingénierie micro-ondes et systèmes RFID",
+
+          research_document:
+            "Consulter le document de recherche",
+
+          timeline_1_title:
+            "Doctorat en électronique et télécommunications",
+
+          timeline_1_text:
+            "Recherche avancée sur les systèmes RFID, la conception d’antennes, l’ingénierie micro-ondes et la validation expérimentale à l’INPT de Rabat.",
+
+          timeline_2_title:
+            "Ingénierie en électronique et télécommunications",
+
+          timeline_2_text:
+            "Formation technique en télécommunications, électronique, systèmes radiofréquences, transmission des signaux et technologies connectées.",
+
+          timeline_3_title:
+            "Formation en robotique et informatique",
+
+          timeline_3_text:
+            "Enseignement et accompagnement des apprenants à travers des projets pratiques en programmation, robotique, électronique, intelligence artificielle et fabrication numérique.",
+
+          timeline_4_title:
+            "Fondateur · Azul Academy",
+
+          timeline_4_text:
+            "Développement d’expériences d’apprentissage STEM pratiques destinées à encourager la créativité, la résolution de problèmes et la maîtrise des technologies.",
+
+          gallery_label:
+            "Galerie de projets",
+
+          gallery_title:
+            "Prototypes, simulations, mesures et projets pédagogiques.",
+
+          gallery_intro:
+            "La galerie détecte automatiquement les fichiers nommés image1, image2, image3, etc. dans le dossier images.",
+
+          gallery_message:
+            "Placez vos images dans le dossier images et nommez-les image1.jpg, image2.jpg, image3.jpg, etc.",
+
+          gallery_image:
+            "Image du projet",
+
+          contact_label:
+            "Travaillons ensemble",
+
+          contact_title:
+            "Vous recherchez une expertise scientifique associée à une mise en œuvre technique concrète ?",
+
+          contact_text:
+            "Je suis ouvert aux opportunités d’ingénierie, de recherche, de conseil, de développement, de formation et de technologie éducative au Maroc et à l’international.",
+
+          email_button:
+            "Me contacter par e-mail",
+
+          contact_note:
+            "Remplacez les coordonnées provisoires du fichier HTML par votre adresse e-mail et les liens réels de vos profils avant la publication.",
+
+          footer_role:
+            "· Ingénieur en électronique et télécommunications"
+        }
+      };
+
+      const languageButtons =
+        document.querySelectorAll(
+          ".language-button"
+        );
+
+      let currentLanguage = "en";
+
+      function changeLanguage(language) {
+      const dictionary =
+        translations[language] ||
+        translations.en;
+
+      currentLanguage = language;
+
+      document.documentElement.lang =
+        language;
+
+      document.title =
+        dictionary.page_title;
+
+      const metaDescription =
+        document.getElementById(
+          "meta-description"
+        );
+
+      if (metaDescription) {
+        metaDescription.setAttribute(
+          "content",
+          dictionary.meta_description
+        );
+      }
+
+      /*
+      CV corresponding to the selected language
+      */
+
+      const cvDownloadLink =
+        document.getElementById(
+          "cv-download-link"
+        );
+
+      if (cvDownloadLink) {
+        if (language === "fr") {
+          cvDownloadLink.href =
+            "CV/Hafid_TIZYI_CV_FR.pdf";
+
+          cvDownloadLink.setAttribute(
+            "aria-label",
+            "Télécharger le CV en français"
+          );
+        } else {
+          cvDownloadLink.href =
+            "CV/Hafid_TIZYI_CV_EN.pdf";
+
+          cvDownloadLink.setAttribute(
+            "aria-label",
+            "Download the English CV"
+          );
+        }
+      }
+
+      document
+        .querySelectorAll("[data-i18n]")
+        .forEach((element) => {
+          const key =
+            element.dataset.i18n;
+
+          if (
+            dictionary[key] !== undefined
+          ) {
+            element.textContent =
+              dictionary[key];
+          }
+        });
+
+      document
+        .querySelectorAll(
+          "[data-i18n-html]"
+        )
+        .forEach((element) => {
+          const key =
+            element.dataset.i18nHtml;
+
+          if (
+            dictionary[key] !== undefined
+          ) {
+            element.innerHTML =
+              dictionary[key];
+          }
+        });
+
+      languageButtons.forEach(
+        (button) => {
+          const active =
+            button.dataset.language ===
+            language;
+
+          button.classList.toggle(
+            "active",
+            active
+          );
+
+          button.setAttribute(
+            "aria-pressed",
+            String(active)
+          );
+        }
+      );
+
+      document
+        .querySelectorAll(
+          ".gallery-item figcaption"
+        )
+        .forEach(
+          (caption, index) => {
+            caption.textContent =
+              dictionary.gallery_image +
+              " " +
+              (index + 1);
+          }
+        );
+
+      localStorage.setItem(
+        "portfolio-language",
+        language
+      );
+    }
+
+      languageButtons.forEach(
+        (button) => {
+          button.addEventListener(
+            "click",
+            () => {
+              changeLanguage(
+                button.dataset.language
+              );
+            }
+          );
+        }
+      );
+
+      const savedLanguage =
+        localStorage.getItem(
+          "portfolio-language"
+        );
+
+      const browserLanguage =
+        navigator.language
+          .toLowerCase()
+          .startsWith("fr")
+          ? "fr"
+          : "en";
+
+      changeLanguage(
+        savedLanguage ||
+        browserLanguage
+      );
+
+      /*
+      Professional profile photo
+
+      Accepted names:
+      images/profile.jpg
+      images/profile.jpeg
+      images/profile.png
+      images/profile.webp
+      */
+
+      const profilePhoto =
+        document.getElementById(
+          "profile-photo"
+        );
+
+      const profileFallback =
+        document.getElementById(
+          "profile-fallback"
+        );
+
+      const profileExtensions = [
+        "jpg",
+        "jpeg",
+        "png",
+        "webp",
+        "JPG",
+        "JPEG",
+        "PNG",
+        "WEBP"
+      ];
+
+      let profileExtensionIndex = 0;
+
+      function tryProfilePhoto() {
+        if (
+          profileExtensionIndex >=
+          profileExtensions.length
+        ) {
+          profilePhoto.style.display =
+            "none";
+
+          profileFallback.style.display =
+            "grid";
+
+          return;
+        }
+
+        profilePhoto.src =
+          "images/profile." +
+          profileExtensions[
+            profileExtensionIndex
+          ];
+
+        profileExtensionIndex += 1;
+      }
+
+      profilePhoto.addEventListener(
+        "error",
+        tryProfilePhoto
+      );
+
+      profilePhoto.addEventListener(
+        "load",
+        () => {
+          profilePhoto.style.display =
+            "block";
+
+          profileFallback.style.display =
+            "none";
+        }
+      );
+
+      tryProfilePhoto();
+
+      /*
+      Automatic image detection
+      */
+
+      const imageExtensions = [
+        "jpg",
+        "jpeg",
+        "png",
+        "webp",
+        "JPG",
+        "JPEG",
+        "PNG",
+        "WEBP"
+      ];
+
+      function findImage(
+        image,
+        imageName,
+        failureFunction
+      ) {
+        let extensionIndex = 0;
+
+        function tryExtension() {
+          if (
+            extensionIndex >=
+            imageExtensions.length
+          ) {
+            image.removeAttribute("src");
+
+            if (
+              typeof failureFunction ===
+              "function"
+            ) {
+              failureFunction();
+            }
+
+            return;
+          }
+
+          image.src =
+            "images/" +
+            imageName +
+            "." +
+            imageExtensions[
+              extensionIndex
+            ];
+
+          extensionIndex += 1;
+        }
+
+        image.addEventListener(
+          "error",
+          tryExtension
+        );
+
+        tryExtension();
+      }
+
+      /*
+      Project images image1 to image5
+      */
+
+      document
+        .querySelectorAll(
+          ".automatic-image"
+        )
+        .forEach((container) => {
+          const image =
+            container.querySelector("img");
+
+          const imageName =
+            container.dataset.image;
+
+          findImage(
+            image,
+            imageName,
+            () => {
+              container.classList.add(
+                "no-image"
+              );
+
+              image.remove();
+            }
+          );
+        });
+
+      /*
+      Automatic gallery image1 to image30
+      */
+
+      const gallery =
+        document.getElementById(
+          "gallery-grid"
+        );
+
+      const maximumImages = 30;
+
+      let loadedImages = 0;
+      let failedImages = 0;
+
+      for (
+        let imageNumber = 1;
+        imageNumber <= maximumImages;
+        imageNumber += 1
+      ) {
+        const item =
+          document.createElement(
+            "figure"
+          );
+
+        const image =
+          document.createElement(
+            "img"
+          );
+
+        const caption =
+          document.createElement(
+            "figcaption"
+          );
+
+        item.className =
+          "gallery-item";
+
+        item.hidden = true;
+
+        image.alt =
+          "Project image " +
+          imageNumber;
+
+        image.loading =
+          "lazy";
+
+        caption.textContent =
+          translations[currentLanguage]
+            .gallery_image +
+          " " +
+          imageNumber;
+
+        item.append(
+          image,
+          caption
+        );
+
+        gallery.insertBefore(
+          item,
+          gallery.querySelector(
+            ".gallery-message"
+          )
+        );
+
+        image.addEventListener(
+          "load",
+          () => {
+            if (item.hidden) {
+              item.hidden = false;
+              loadedImages += 1;
+
+              gallery.classList.remove(
+                "empty"
+              );
+            }
+          }
+        );
+
+        findImage(
+          image,
+          "image" + imageNumber,
+          () => {
+            failedImages += 1;
+            item.remove();
+
+            if (
+              failedImages ===
+                maximumImages &&
+              loadedImages === 0
+            ) {
+              gallery.classList.add(
+                "empty"
+              );
+            }
+          }
+        );
+      }
+
+      /*
+      Mobile navigation
+      */
+
+      const menuButton =
+        document.getElementById(
+          "menu-button"
+        );
+
+      const navigation =
+        document.getElementById(
+          "nav-links"
+        );
+
+      menuButton.addEventListener(
+        "click",
+        () => {
+          const isOpen =
+            navigation.classList.toggle(
+              "open"
+            );
+
+          menuButton.setAttribute(
+            "aria-expanded",
+            String(isOpen)
+          );
+
+          menuButton.textContent =
+            isOpen ? "×" : "☰";
+        }
+      );
+
+      navigation
+        .querySelectorAll("a")
+        .forEach((link) => {
+          link.addEventListener(
+            "click",
+            () => {
+              navigation.classList.remove(
+                "open"
+              );
+
+              menuButton.setAttribute(
+                "aria-expanded",
+                "false"
+              );
+
+              menuButton.textContent =
+                "☰";
+            }
+          );
+        });
+
+      /*
+      Header appearance on scroll
+      */
+
+      const header =
+        document.getElementById(
+          "site-header"
+        );
+
+      window.addEventListener(
+        "scroll",
+        () => {
+          header.classList.toggle(
+            "scrolled",
+            window.scrollY > 16
+          );
+        },
+        {
+          passive: true
+        }
+      );
+
+      /*
+      Scroll reveal animation
+      */
+
+      if (
+        "IntersectionObserver" in window
+      ) {
+        const observer =
+          new IntersectionObserver(
+            (entries) => {
+              entries.forEach(
+                (entry) => {
+                  if (
+                    entry.isIntersecting
+                  ) {
+                    entry.target
+                      .classList.add(
+                        "visible"
+                      );
+
+                    observer.unobserve(
+                      entry.target
+                    );
+                  }
+                }
+              );
+            },
+            {
+              threshold: 0.12
+            }
+          );
+
+        document
+          .querySelectorAll(
+            ".reveal"
+          )
+          .forEach((element) => {
+            observer.observe(element);
+          });
+      } else {
+        document
+          .querySelectorAll(
+            ".reveal"
+          )
+          .forEach((element) => {
+            element.classList.add(
+              "visible"
+            );
+          });
+      }
+
+      /*
+      Gallery modal
+      */
+
+      const modal =
+        document.getElementById(
+          "image-modal"
+        );
+
+      const modalImage =
+        document.getElementById(
+          "modal-image"
+        );
+
+      const modalClose =
+        document.getElementById(
+          "modal-close"
+        );
+
+      gallery.addEventListener(
+        "click",
+        (event) => {
+          const item =
+            event.target.closest(
+              ".gallery-item"
+            );
+
+          if (!item) {
+            return;
+          }
+
+          const image =
+            item.querySelector("img");
+
+          if (
+            !image ||
+            !image.src
+          ) {
+            return;
+          }
+
+          modalImage.src =
+            image.src;
+
+          modalImage.alt =
+            image.alt;
+
+          modal.classList.add(
+            "open"
+          );
+
+          document.body.style.overflow =
+            "hidden";
+
+          modalClose.focus();
+        }
+      );
+
+      function closeModal() {
+        modal.classList.remove(
+          "open"
+        );
+
+        modalImage.src = "";
+
+        document.body.style.overflow =
+          "";
+      }
+
+      modalClose.addEventListener(
+        "click",
+        closeModal
+      );
+
+      modal.addEventListener(
+        "click",
+        (event) => {
+          if (
+            event.target === modal
+          ) {
+            closeModal();
+          }
+        }
+      );
+
+      document.addEventListener(
+        "keydown",
+        (event) => {
+          if (
+            event.key === "Escape" &&
+            modal.classList.contains(
+              "open"
+            )
+          ) {
+            closeModal();
+          }
+        }
+      );
+
+    })();
+  </script>
 
 </body>
 </html>
